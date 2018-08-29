@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+table {
+	margin: auto;
+}
+
+#wrapper {
+	background-color: #FFF;
+	height: auto;
+	width: 970px;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-bottom: 25px;
+	margin-left: auto;
+	border: 1px solid #999;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#wrapper h1 {
+	text-align: center;
+	color: #03C;
+	margin-top: 60px;
+	margin-right: 25px;
+	margin-bottom: 60px;
+	margin-left: 25px;
+}
+#wrapper h2 {
+	color: #C00;
+	text-align: center;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+#wrapper p {
+	margin-right: 30px;
+	margin-left: 30px;
+}
+#wrapper p #pic111 {
+	float: left;
+	padding-bottom: 30px;
+	padding-right: 30px;
+}
+.centrContent {
+	text-align: center;
+	alignment-adjust: central;
+}
+
+
+
+
+
+body {
+	background-image: url(sch_sky_texture_1.jpg);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
