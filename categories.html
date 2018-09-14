@@ -15,7 +15,7 @@ layout: default
             {% if group == null or group == node.group %}
                 <li><span class="post-date">
                     {% assign date_format = site.date_format.categories %}
-                    {{ node.date | localize: "%b %Y"  }} </span><a href="{{ site.baseurl}}{{ node.url }}">{{ node.title }}</a></li>
+                    {{ node.date | date: date_format  }} </span><a href="{{ site.baseurl}}{{ node.url }}">{{ node.title }}</a></li>
             {% endif %}
             {% endif %}
         {% endfor %}
