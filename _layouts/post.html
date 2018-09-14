@@ -19,7 +19,7 @@ layout: default
     <div class="col-xs-7"> <!--style="background-color: #ff9999">-->
 		<span class="post-date">
             {% assign date_format = site.date_format.title %}
-            {{ page.date | localize: "%d %B %Y" }}
+            {{ page.date | date: date_format }}
         </span>
 	</div>
 	<div class="col-xs-5" style="text-right"> <!--style="background-color: #ffAA99">-->
