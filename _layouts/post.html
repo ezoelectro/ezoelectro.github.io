@@ -16,13 +16,13 @@ layout: default
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-7"> <!--style="background-color: #ff9999">-->
+    <div class="col-xs-5"> <!--style="background-color: #ff9999">-->
 		<span class="post-date">
             {% assign date_format = site.date_format.title %}
             {{ page.date | date: date_format }}
         </span>
 	</div>
-	<div class="col-xs-5" style="text-right"> <!--style="background-color: #ffAA99">-->
+	<div class="col-xs-7" style="text-right"> <!--style="background-color: #ffAA99">-->
 	{% if page.next %}
     <a class="btn btn-default pull-right" href="{{ site.baseurl}}{{ page.next.url }}" class="next" title="new">►</a>
     {% endif %}
