@@ -17,7 +17,7 @@ img: post001/12_sm.jpg # Add image post (optional)
    <img src="{{ site.baseurl }}/assets/images/post001/02_sm.jpg" alt="img" width="677" /></a></p>
 <p><a  href="{{ site.baseurl }}/assets/images/post001/03.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post001/03_sm.jpg" alt="img" width="677" /></a></p>
-<p><br>Нарисовал нарисовал кнопку, и увеличил окно, для удобства вытирания стекла:</p>
+<p><br>Нарисовал кнопку, и увеличил окно, для удобства вытирания стекла:</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post001/04.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post001/04_sm.jpg" alt="img" width="677" /></a></p>
 <p><br>Перепаял терморезистор на плату защиты аккумулятора:</p>
@@ -41,7 +41,7 @@ img: post001/12_sm.jpg # Add image post (optional)
 <p><br>Двух инфракрасных светодиодов не хватило, пришлось еще приделать 4шт:</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post001/12.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post001/12_sm.jpg" alt="img" width="677" /></a></p>
-<p><br>Порвал фрезер паролон, новерное потому что сильно он был приклеен, либо слабые обороты выставил:</p>
+<p><br>Порвал фрезер паролон, наверное потому что сильно он был приклеен, либо слабые обороты выставил:</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post001/13.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post001/13_sm.jpg" alt="img" width="677" /></a></p>
 <p><br>Даже 6 светодиодов не хватает для нормальной яркости камеры, максимум 8fps выдает в темноте с ИК подсветкой. Пришлось для контраста на глазу черные и белые полоски рисовать:</p>
