@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "Remdet4.3 и Remdet5"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Новый корпус Remdet4.3 и переход на Remdet5 
+img: history05/V5_1_PCB01_sm.PNG # Add image post (optional)
+---
+<p>Корпус V4.3 толщиной 6.5мм:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE01_sm.JPG" alt="img" width="677" /></a></p>  
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE02.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE02_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE03.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE03_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE04.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE04_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE05.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE05_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE06.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE06_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE07.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE07_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE08.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE08_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE09.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE09_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE10.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE10_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V4_3_CASE11.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V4_3_CASE11_sm.JPG" alt="img" width="677" /></a></p>   
+
+  
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p>Вернулся к толщине корпуса 8мм. Корпус версии 5.0:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE01_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE02.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE02_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE03.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE03_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE04.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE04_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE05.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE05_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE06.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE06_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE07.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE07_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE08.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE08_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE09.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE09_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE10.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE10_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE11.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE11_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE12.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE12_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE13.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE13_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE14.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE14_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE15.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE15_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE16.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE16_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE17.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE17_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE18.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE18_sm.JPG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_CASE19.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_CASE19_sm.JPG" alt="img" width="677" /></a></p>
+
+  <hr>
+  <p>&nbsp;</p>
+  <p>Изза очень маленького объема памяти в микроконтроллере PIC18F14K50 - 16Kb, пришлось его заменить на PIC18F46J50 - 64Kb. Печатная плата версии 5.0:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_PCB01.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_PCB01_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_PCB02.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_PCB02_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_PCB03.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_PCB03_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_PCB04.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_PCB04_sm.PNG" alt="img" width="677" /></a></p>
+  <hr>
+  <p>&nbsp;</p>
+  <p>Принципиальная схема версии 5.0:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_0_SCH01.pdf">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_0_SCH01_sm.PNG" alt="img" width="677" /></a></p>
+   <hr>
+   <p>&nbsp;</p>
+   <p>Решил разместить 4 оптических датчика для более точного отслеживания положения глаза и для реализации обратной связи из сна по сложным движениям глаза. Печатная плата версии 5.1:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB01.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB01_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB02.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB02_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB03.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB03_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB04.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB04_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB05.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB05_sm.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_PCB06.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_PCB06_sm.PNG" alt="img" width="677" /></a></p>   
+
+
+  <p>&nbsp;</p>
+  <p>Принципиальная схема версии 5.1:</p>
+  <p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_SCH01.pdf">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_SCH01_sm.PNG" alt="img" width="677" /></a></p>

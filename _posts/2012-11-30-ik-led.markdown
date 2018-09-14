@@ -1,0 +1,304 @@
+---
+layout: post
+title:  "Исследование энергопотребления инфракрасного светодиода"
+categories: Other
+tags: Other
+author: Alex Koblov
+description: Импульсный режим питания светодиода
+img: other01/test_box1.JPG # Add image post (optional)
+---
+
+<p>Цель исследования - найти режимы работы инфракрасного светодиода в паре с инфракрасным фототранзистором в котором будет минимальное энергопотребление схемы. Идея в использовании импульсного питания светодиода, т.е. запитывать светодиод только в период опроса фототранзистора. Подавая большой ток на короткий импульс.</p>
+<hr style="width: 100%; height: 2px;">
+  <p><br>30.11.12</p>
+
+ 
+ <p><a href="{{ site.baseurl }}/assets/images/other01/scheme_power_led.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/scheme_power_led.JPG" alt="img" width="600" /></a></p>
+   
+   <p> Принципиальная  схема тестовой установки. Используется инфракрасный светодиод
+    KP-3216F3C и инфракрасный фототранзистор KP-3212P3C. Для запитывания
+  светодиода используется три разных резистора: 270 Ом, 100 Ом, 68 Ом. В
+  качестве генератора импульсов используется микроконтроллер PIC 12F629.
+  Каждый раз перепрограммировался после задания нужной задержки. Делалось
+  это специально чтобы заумный код микроконтреллера не вносил искажения в
+  измеряемый ток потребления схемы. Амперметр - тестер DT830B. Голубой и
+  Желтый это места подключешния соответствующих щупов осциллографа. Вся
+  схема запитывается от USB->DCDC3.3V->Stab->3.3v.<br>
+  <br></p>
+ 
+  <p><a href="{{ site.baseurl }}/assets/images/other01/scheme_test_box.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/scheme_test_box.JPG" alt="img" width="600" /></a></p>
+   
+
+Схема показывающая процесс отражения инфракрасного излучения в закрытой коробке.<br>
+    <br>
+ 
+   <p><a href="{{ site.baseurl }}/assets/images/other01/test_box1.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/test_box1.JPG" alt="img" width="600" /></a></p>
+
+Плата жестко прикручена к корпусу, что обеспечивает жесткую фиксацию оптопары
+  над одним местом в корпусе и на одной высоте, в ходе всего эксперимента.<br>
+ 
+  <br>
+<p><a href="{{ site.baseurl }}/assets/images/other01/test_box2.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/test_box2.JPG" alt="img" width="600" /></a></p>
+<br>
+   <p> Корпус закрывается крышкой. Щелки конечно там были изза проводов, но влияние внешнего освещения при закрытой крышке никак не обнаруживалось. Так что
+  им в полной уверенности можн пренебречь.<br>
+  <br>
+  Сам эксперимент:<br>
+  Измерения проводились сначала с резистором 270 Ом это левый столбец в рисунках с
+  осциллограммами.. Потом я убрал этот резистор и поставил 100 Ом, это
+  центральный столбец. Правый это 68 Ом (реально было 70 Ом).</p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<p>270 om (столбец вниз)</p>
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-1.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-1.GIF" alt="img" width="320" /></a>
+   <p>IR LED - OFF, 0.53mA</p>
+	</div>
+	<div class="col-xs-4">
+	<p>100 om (столбец вниз)</p>
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-1.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-1.GIF" alt="img" width="320" /></a>
+   <p>IR LED - OFF, 0.54mA</p>
+	</div>
+	<div class="col-xs-4">
+	<p>68 om (столбец вниз)</p>
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-1.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-1.GIF" alt="img" width="320" /></a>
+   <p>IR LED - OFF, 0.54mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-2.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-2.GIF" alt="img" width="320" /></a>
+   <p>10us-ON, 0.55mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-2.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-2.GIF" alt="img" width="320" /></a>
+   <p>10us-ON, 0.56mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-2.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-2.GIF" alt="img" width="320" /></a>
+   <p>10us-ON, 0.57mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-3.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-3.GIF" alt="img" width="320" /></a>
+   <p>100us-ON, 0.62mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-3.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-3.GIF" alt="img" width="320" /></a>
+   <p>100us-ON, 0.67mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-3.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-3.GIF" alt="img" width="320" /></a>
+   <p>100us-ON, 0.70mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-4.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-4.GIF" alt="img" width="320" /></a>
+   <p>1000us-ON, 1.26mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-4.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-4.GIF" alt="img" width="320" /></a>
+   <p>1000us-ON, 1.77mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-4.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-4.GIF" alt="img" width="320" /></a>
+   <p>1000us-ON, 1.9mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-5.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-5.GIF" alt="img" width="320" /></a>
+   <p>5000us-ON, 4.20mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-5.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-5.GIF" alt="img" width="320" /></a>
+   <p>5000us-ON, 6.66mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-5.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-5.GIF" alt="img" width="320" /></a>
+   <p>5000us-ON, 7.28mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-6.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-6.GIF" alt="img" width="320" /></a>
+   <p>7500us-ON, 6.03mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-6.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-6.GIF" alt="img" width="320" /></a>
+   <p>7500us-ON, 9.7mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-6.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-6.GIF" alt="img" width="320" /></a>
+   <p>7500us-ON, 10.62mA</p>
+	</div>
+   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/270om-7.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/270om-7.GIF" alt="img" width="320" /></a>
+   <p>IR LED - ON, 6.41mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/100om-7.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/100om-7.GIF" alt="img" width="320" /></a>
+   <p>IR LED - ON, 10.35mA</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/68om-7.GIF" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/68om-7.GIF" alt="img" width="320" /></a>
+   <p>IR LED - ON, 11.31mA</p>
+	</div>
+   </div>
+</div>
+
+
+  <br>
+  <p>Насыщение
+фототранзистора (полная засветка) на данных осциллограммах не показана.
+Но ближе всего картинка правая нижняя. При полной засветке желтая линия
+опускается вниз, чуть выше чем 0 вольт.<br>
+<br>
+Четко видно что светодиод входит в рабочий режим через 2ms или 2000us, после подачи на него питания.<br>
+<br>
+Рассмотрим
+первый столбец результатов замера с резистором 270 Ом.  На первом
+рисунке видно инфракрасный светодиод выключен голубая линия показывает
+уровень 0 вольт. Желтая линия показывает что фототранзистор закрыт, и
+уровень сигнала 3.3В.<br>
+.....<br>
+...<br>
+<br></p>
+<hr style="width: 100%; height: 2px;">
+<p>03.12.12<br></p>
+<br>
+<p>Рассмотрим что на линии питания:<br></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/1_voltage-fail_1ms_68om_199ma_5uF.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/1_voltage-fail_1ms_68om_199ma_5uF.png" alt="img" width="320" /></a>
+   <p>Конденсатор на питании 5uF</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/2_voltage-fail_1ms_68om_199ma_105uF.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/2_voltage-fail_1ms_68om_199ma_105uF.png" alt="img" width="320" /></a>
+   <p>Конденсатор на питании 105uF</p>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/other01/3_voltage-fail_1ms_68om_199ma_475uF.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/3_voltage-fail_1ms_68om_199ma_475uF.png" alt="img" width="320" /></a>
+   <p>Конденсатор на питании 475uF</p>
+	</div>
+   </div>
+</div>
+
+Замеры проводились с резистором на светодиоде номиналом 68 Ом. Импульс длительностью 1000us или 1ms.<br>
+<br>
+Видно что чем больше емкость конденсатора тем меньше провал по питанию.<br>
+<hr style="width: 100%; height: 2px;">
+04.12.12<br>
+<br>
+Подумал про пуль дистанционного управления телека, там же тоже 
+инфракрасный светодиод и работает такой пульт годами. Посмотрел схемы 
+разных пультов и увидел, что в цепи светодиода почти нет сопротивления 
+(резистора), вернее он нам есть но на 2-3 Ома. А у меня то 100 Ом стоит.
+ И схема в пульте работает в импульсном режиме. Заменил свои 100 Ом на 
+39 Ом, длительность импульса подсветки 200us, и о супер потребление 
+сократилось очень значительно при той же чувствительности к движению 
+глаза. До этого потребление было 40мА, а сейчас 10мА. Кстати можно 
+попробовать резистор еще уменьшить, в даташите на светодиод(KP-3216F3C) 
+написано, что в импульсном режиме(короткие импульсы 10us и пауза 100us) 
+светодиод до 1.2А выдерживает, так что еще есть куда экономить 
+батарейку. Пока оставлю 39 Ом. Общая яркость светодиода тоже уменьшилась
+ в 4 раза, он теперь подсвечивается только в момент опроса фотодатчиков.
+ И влияние на глаз ИК излучения тоже в 4 раза уменьшилось, хотя и до 
+этого оно было незначительным. Кстати оказалось очень хорошо, что в моей
+ схеме светодиоды запитываются через IRLML2402 (MOSFET транзистор), 
+потому что порт микроконтроллера не смог бы выдать такие большие 
+импульсы тока.<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+	<a href="{{ site.baseurl }}/assets/images/other01/mosfet_39ohm_1.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/mosfet_39ohm_1.PNG" alt="img" width="320" /></a>
+	</div>
+	<div class="col-xs-6">
+	<a href="{{ site.baseurl }}/assets/images/other01/mosfet_39ohm_2.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/mosfet_39ohm_2.PNG" alt="img" width="320" /></a>
+	</div>
+   </div>
+</div>
+
+ <br>
+Голубой щуп светодиод, желтый фототранзистор.<br>
+<br>
+Да из-за перевода
+ в импульсный режим пришлось отказаться от ШИМ регулировки яркости 
+светодиодов, но возможность регулировки яркости-уровня сигнала 
+постоянной составляющей(на фототранзисторе) также осталась, регулируя 
+эти самые 200us можно делать ярче или слабее. Но увеличение длительности
+ сильно повышает потребление схемой, есть смысл уменьшить резистор и 
+сильно не увеличивать время подсветки, но в каких то разумных пределах 
+его регулировать, например 100us-500us.<br>
+P.S.уменьшил до 33 Ом, думаю пока хватит.Стало так:<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+	<a href="{{ site.baseurl }}/assets/images/other01/mosfet_33ohm_1.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/mosfet_33ohm_1.PNG" alt="img" width="320" /></a>
+	</div>
+	<div class="col-xs-6">
+	<a href="{{ site.baseurl }}/assets/images/other01/mosfet_33ohm_2.PNG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/other01/mosfet_33ohm_2.PNG" alt="img" width="320" /></a>
+	</div>
+   </div>
+</div>
+
+Нулевой уровень от фототранзистора(желтый) не фиксирован, потому что 
+плата жестко не закреплена в тестовой коробке над отражающим пластиком.

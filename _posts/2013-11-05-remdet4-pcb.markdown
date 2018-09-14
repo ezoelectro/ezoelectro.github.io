@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Remdet4 пришли печатные платы"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Получил заказанные на заводе печатные платы
+img: history03/remdet4_pcb1.jpg # Add image post (optional)
+---
+<p>Пришли заказанные печатные платы.</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/remdet4_pcb1.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/remdet4_pcb1_sm.jpg" alt="img" width="500" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/remdet4_pcb2.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/remdet4_pcb2_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/remdet4_pcb3.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/remdet4_pcb3_sm.jpg" alt="img" width="500" /></a></p>
+<p>В корпусе плата держится как и задумывалось.</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/remdet4_pcb4.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/remdet4_pcb4_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>

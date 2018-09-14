@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Remdet4, USB из CDC в HID "
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: USB из CDC(виртуальный COM порт) в HID (Human Interface Device)
+img: history04/usb_hid_04.PNG # Add image post (optional)
+---
+<p>Получилось все таки переделать весь проект из  CDC(виртуальный COM порт) в HID (Human Interface Device). Благодаря чудному  компоненту для C++ Builder 6 под названием <a href="http://sourceforge.net/projects/jvcl/files/JVCL%203/JVCL%203.40/">JEDI JCL 2.2.1 и JEDI JVCL 3.40</a> (были и более новые версии, но они на C++ Builder 6  не стали), в палитре JvSystem под названием JvHidDeviceController. Плюс его в  том, что он умеет работать с HIDом через getReport и setReport в отличии от  других компонентов в которых были реализованы только getFeature setFeature. Но  мой пример на микроконтроллере ну никак не хотел работать через getFeature и setFeature.  Ну теперь все работает, больше не нужно выбирать COM порт и нажимать Connect,  достаточно просто подключить в USB и Remdetector подключен. Еще попутно  выяснилось что прошивка с виртуальным ком портом занимала больше чем с HID.  (CDC Used:12760 Free: 3450)(HID Used:12080 Free:4130) По энергопотреблению  изменений практически нет: в выключенном состоянии 31-32мка, включенное  2.33мА(1мкс), включенное 2.49мА(500мкс), включенное USB 8.15мА(1мкс),  включенное USB 8.30мА(500мкс).</p>
+<p><img src="{{ site.baseurl }}/assets/images/history04/usb_hid_06.PNG" alt="img" width="677" class="img-rounded"></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history04/usb_hid_05.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/usb_hid_05.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history04/usb_hid_04.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/usb_hid_04.PNG" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history04/usb_hid_03.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/usb_hid_03.PNG" alt="img" width="677" /></a></p>
+  

@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Эксперимены с Bluetooth 4.0"
+categories: Other
+tags: Other
+author: Alex Koblov
+description: он же Bluetooth Low Energy, от же Bluetooth Smart.
+img: other02/ble112_dongl3.jpg # Add image post (optional)
+---
+<p>Впервые увидел такие модули в журнале "Компоненты и технологии", рекламировала
+их MT-System, но купить у них не получилось, не хотят они работать с
+частными лицами. Купил в МегаЭлектронике. Прислали экспресс почтой два
+модуля BLE112 и программатор СС-Debugger. Донглов BLED112 не было,
+сказали будут через месяц. Поэтому для начала решил сделать из модулей
+донглы и потестить с программой blegui идущей в sdk от bluegiga.</p>
+<p><a href="{{ site.baseurl }}/assets/images/other02/ble112_dongl1.jpg" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl1.jpg" alt="img" width="677" /></a></p>
+Принципиальная схема донгла из даташита на ble112.<br>
+  <br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl2.jpg" alt="img" width="677" class="img-rounded"></p>   
+Первый самодельный донгл с отдельным питанием 3.3в<br>
+  <br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl3.jpg" alt="img" width="677" class="img-rounded"></p>   
+  Второй донгл уже со своим отдельным стабилизатором на 3.3в<br>
+  <br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl4.jpg" alt="img" width="677" class="img-rounded"></p>   
+  Плата стабилизатора. <br>
+  <br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl5.jpg" alt="img" width="677" class="img-rounded"></p>   
+  Модуль BLE112 вид сзади<br>
+  <br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/ble112_dongl6.jpg" alt="img" width="677" class="img-rounded"></p>   
+  Модуль BLE112 вид спереди<br>
+  <br>
+  
+  <p><a href="{{ site.baseurl }}/assets/images/other02/blegui2_screenshot1.png" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/other02/blegui2_screenshot1.png" alt="img" width="677" /></a></p>
+обнаружился модуль, и даже видит другой по радиоканалу.<br>
+  <br>
+  <p><a href="{{ site.baseurl }}/assets/images/other02/blegui2_screenshot2.png" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/other02/blegui2_screenshot2.png" alt="img" width="677" /></a></p>
+Прошил прошивкой из примеров "usbcdc".<br>
+  Воткнул в usb и вуаля обнаружился донгл!!!<br>
+
+  <hr style="width: 100%; height: 2px;">
+  15.12.12<br>
+  Cейчас пишу свою первую прогу под Андроид. Купил вчера Samsung galaxy s3. От iOS, временно пока отошел.<br>
+<p><img src="{{ site.baseurl }}/assets/images/other02/galaxy_s3_android.jpg" alt="img" width="677" class="img-rounded"></p>   
+  .....<br>
+  В общем использование Bluetooth 4.0 на всех андроидах сейчас недоступно.
+ Нет ни библиотек, ни API. Нет общего стандарта в самом Андроиде. И 
+когда появится никто не знает, очень многие ждут еще с весны 2012. Так 
+что альтернативы яблочной продукции пока нет. Сейчас всеми способами 
+пытаюсь сдать Samsung Galaxy S3 в магазин, 2 недели еще не прошло. 
+Написал заявление в магазине, описал проблему, жду решения.<br>
+Тема давно обсуждается на сайте производителя, и самсунг в курсе, но ничего не предпринимается: <a href="http://developer.samsung.com/forum/board/thread/view.do?boardName=GeneralB&messageId=157757" target="_blank">http://developer.samsung.com/forum/board/thread/view.do?boardName=GeneralB&messageId=157757</a><br>
+<br>
+

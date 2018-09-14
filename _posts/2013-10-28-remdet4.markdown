@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "Remdet4"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Разработка четвертой версии прибора
+img: history03/case_imitation_2_sm.jpg # Add image post (optional)
+---
+
+<!--<h1>История разработок. Часть 3</h1>-->
+<!--<h2>28 октября 2013</h2>-->
+
+<p>Разработка четвертой версии remdetectora. </p>
+<a  href="{{ site.baseurl }}/assets/images/history03/case_imitation_1.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_imitation_1_sm.jpg" alt="img" width="500" /></a>
+<p>Подбор допустимой толщины корпуса. </p>
+<p>&nbsp;</p>
+<a  href="{{ site.baseurl }}/assets/images/history03/case_imitation_2.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_imitation_2_sm.jpg" alt="img" width="500" /></a>
+<p>Максимум чтобы глаз ночью не цеплял за корпус это 8мм для данной
+маски и моего глаза :)</p>
+<p>&nbsp;</p>
+<a  href="{{ site.baseurl }}/assets/images/history03/case_imitation_3.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_imitation_3_sm.jpg" alt="img" width="500" /></a>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/schm1.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/schm1.jpg" alt="img" width="500" /></a></p>
+<p>Первый вариант схемы. Позже немного переделал цепь зарядки
+аккумулятора. Вот текущий вариант схемы от 26.12.2013 - <a href="{{ site.baseurl }}/assets/images/history03/SCH_REMDET4_2013_12_26.pdf">SCH_REMDET4_2013_12_26.pdf</a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/pcb1.PNG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/pcb1.PNG" alt="img" width="500" /></a></p>
+<p>Разводка печатной платы, в процессе.</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/pcb2.PNG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/pcb2.PNG" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/pcb3.PNG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/pcb3.PNG" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_1.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_1_sm.jpg" alt="img" width="500" /></a></p>
+<p>3D модель корпуса</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_2.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_2_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_3.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_3_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_4.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_4_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_5.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_5_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/case_3d_model_6.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/case_3d_model_6_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_01.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_01_sm.jpg" alt="img" width="500" /></a></p>
+<p>Напечатал корпус на фотополимерном 3D принтере. Цена 2000руб.</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_02.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_02_sm.jpg" alt="img" width="500" /></a></p>
+<p> Детализация очень высокая. Очень доволен. Можно было за 2240руб,
+тогда бы обе внешние стороны были гладкими, так только одна, та где
+оптопары. Это потому что печатали вверх ногами и требовалось бы больше
+материала поддержки. Ну зато теперь знаю чем глянцевая сторона
+отличается от матовой при 3D печати.</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_03.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_03_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_04.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_04_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_05.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_05_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_06.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_06_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_07.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_07_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_08.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_08_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_09.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_09_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_10.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_10_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/real_case_11.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/real_case_11_sm.jpg" alt="img" width="500" /></a></p>
+<p>Толщина 8мм</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/eco_case_1.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/eco_case_1_sm.jpg" alt="img" width="500" /></a></p>
+<p>Этот вариант корпус напечатал знакомый на своем экструзионном 3d
+принтере(Solidoodle 3 покупал его за $800 у производителя), цены за
+корпус я от знакомого так и не добился, говорит по цене пластика,
+качество заметно хуже чем из фотополимера, но цена думаю раз в 10
+дешевле. Главное свою функцию будет выполнять :)</p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/eco_case_2.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/eco_case_2_sm.jpg" alt="img" width="500" /></a></p>
+<p>&nbsp;</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/eco_case_3.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/eco_case_3_sm.jpg" alt="img" width="500" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history03/eco_case_4.jpg" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history03/eco_case_4_sm.jpg" alt="img" width="500" /></a></p>
+<p>____________________________________________________________________________
+</p>
+<p>&nbsp;</p>

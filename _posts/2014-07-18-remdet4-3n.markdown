@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Remdet4, 3 ночных записи"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: три ночных записи
+img: history04/test_N1_1.PNG # Add image post (optional)
+---
+<p>Подряд 3 ночи записей с REMDETECTOR. Както неоднозначно ведут себя глаза. Почумуто фазы с каждым днем обнаружить все сложнее. </p>
+<p><a href="{{ site.baseurl }}/assets/images/history04/test_N1_1.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/test_N1_1.PNG" alt="img" width="677" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/images/history04/test_N1_2.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/test_N1_2.PNG" alt="img" width="677" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/images/history04/test_N1_3.PNG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/test_N1_3.PNG" alt="img" width="677" /></a></p>

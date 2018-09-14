@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Remdet5, расположение 4х датчиков"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Постарался разместить наиболее компактно
+img: history05/V5_1_LED_FOTO01_sm.JPG # Add image post (optional)
+---
+<p>Расположение инфракрасных датчиков движения глаза, в центре красный светодиод.</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history05/V5_1_LED_FOTO01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history05/V5_1_LED_FOTO01_sm.JPG" alt="img" width="677" /></a></p>  
