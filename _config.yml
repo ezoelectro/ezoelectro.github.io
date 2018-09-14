@@ -24,6 +24,7 @@ paginate: 24
 
 highlighter: rouge
 markdown: kramdown
+plugins: ['i18n']
 plugins: ['jekyll-paginate']
 
 gaaccount: UA-12871483-2
