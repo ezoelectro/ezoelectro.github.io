@@ -13,10 +13,10 @@ url: https://github.com/ezoelectro/ezoelectro.github.io
 baseurl: ''
 ## default date_format
 date_format: 
-  title: "%B-%-d-%Y"
-  archive: "%d-%b"
-  categories: "%b-%Y"
-  tag: "%b-%Y"
+  title: "%Y-%m-%d"
+  archive: "%Y-%m-%d"
+  categories: "%Y-%m-%d"
+  tag: "%Y-%m-%d"
 # Language
 lan: "ru" 
 
@@ -24,7 +24,6 @@ paginate: 24
 
 highlighter: rouge
 markdown: kramdown
-plugins: ['i18n']
 plugins: ['jekyll-paginate']
 
 gaaccount: UA-12871483-2
