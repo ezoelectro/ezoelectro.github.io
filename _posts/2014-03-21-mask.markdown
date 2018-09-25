@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "Маска для сна"
+categories: Other
+tags: Other
+author: Alex Koblov
+description: Хочешь маску для сна - сделай ее
+img: other04/mask01.jpg # Add image post (optional)
+---
+<p>За основу берется маска одной известной фирмы. В 2012 году, я купил ее в интернете за 1200руб (прислали из Красноярска).<br>
+  
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask01.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask02.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask03.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask04.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask05.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask06.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask07.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask08.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask09.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask10.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask11.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><img src="{{ site.baseurl }}/assets/images/other04/mask12.jpg" alt="img" width="600" class="img-rounded"></p>
+<p><a href="{{ site.baseurl }}/assets/images/other04/mask.pdf"><img src="{{ site.baseurl }}/assets/images/other04/mask13.jpg" alt="img" width="600" class="img-rounded"></a></p>
+
+<p>При печати шаблона (<a href="{{ site.baseurl }}/assets/images/other04/mask.pdf">скачать mask.pdf</a>),
+в Acrobat Reader замените "Масштаб страницы: Подогнать под поля принтера" на "Масштаб страницы: Нет", чтобы в правильном масштабе
+напечатать.</p>
+<p><br></p>
+<hr style="width: 100%; height: 2px;">
+<p>Добавлено 29 июля 2018:</p>
+<p>Пластиковая основа из папки для бумаг</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/mask01.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/mask01_sm.JPG" alt="img" width="677" /></a> 
+<p><br>Прорези под ремешок делал фрезером:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/mask02.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/mask02_sm.JPG" alt="img" width="677" /></a> 
+<p><br>Черный паралон не нашел, делал из светлого. Он кстати более плотный, чем на оригинальной маске. Шаблоны приклеиваются к пластику и паралону двусторонним скотчем. После вырезания по контуру ножницами, скотч отклеить как можно быстрее, иначе он сильно приклеится и повреждает паралон при отрывании.</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/mask03.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/mask03_sm.JPG" alt="img" width="677" /></a> 
+<p><br>Прибор Remdet6 прикрепил болтиками, расстояние до глаза примерно 15мм:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/mask04.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/mask04_sm.JPG" alt="img" width="677" /></a> 

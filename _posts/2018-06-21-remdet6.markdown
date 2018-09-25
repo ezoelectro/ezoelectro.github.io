@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "Remdet 6, корпус, VCNL4010."
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Новый корпус, датчик расстояния VCNL4010
+img: history08/01_case_vcnl4010_sm.JPG # Add image post (optional)
+---
+<p>Купил тестовую платку с датчиком расстояния VCNL4010 нарисовал для нее корпус для экспериментов:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/01_case_vcnl4010.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/01_case_vcnl4010_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Распечатал за 300руб на Picasso 3D принтере с толщиной слоя 0.05мм, вроде нормально получилось:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/02_case_vcnl4010.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/02_case_vcnl4010_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Корпус в разобранном виде:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/03_case_vcnl4010.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/03_case_vcnl4010_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Тестовую плату с vcnl4010 заказывал на Aliexpress за 600руб:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/04_case_vcnl4010.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/04_case_vcnl4010_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Принципиальная схема Remtetector версии 6.0:</p>
+<a href="{{ site.baseurl }}/assets/images/history08/remdet6_schm.pdf"><img src="{{ site.baseurl }}/assets/images/history08/05_remdet6_schm_sm.png"/></a>
+<p>&nbsp;</p><p>Собрал макет, пока на блютус модуле BLE112 (в основной схеме используется BLE113):</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/06_remdet6_prot.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/06_remdet6_prot_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Макет работает. Тестовая прога, отображает данные с датчика расстояния и акселерометра, принимает по bluetooth 4.0:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/07_prog_remdet6.png" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/07_prog_remdet6_sm.png" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Нарисовал корпус Remdetector v6.0:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/08_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/08_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Развел плату, 4х слойную. На 2слоя влезть было не реально. Все компоненты с одной стороны, при монтаже будет легче. Толщина 1.6мм для простоты прототипирования, можно заказывать по 3 шт, а тонкие платы (0.5мм) нужно было только по целой заготовке заказывать.:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/09_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/09_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Разъем для программирования и отладки с платы убрал, он сильно высокий был, да и место занимал. Нарисовал вот такую прищепку. Заказал на Алиэкспресс разъем PogoPin на 8 пружинящих  контактов:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/10_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/10_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Плата в корпусе с обратной стороны:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/11_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/11_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Окно в корпусе делал по углу рассеивания датчика расстояния:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/12_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/12_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Корпус размером 38х54мм, толщиной 7мм. Плата 33.4х23.79мм толщиной 1.6мм:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/13_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/13_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p><p>Вид в разрезе:</p>
+<a  href="{{ site.baseurl }}/assets/images/history08/14_case_remdet6.JPG" class="highslide" onclick="return hs.expand(this)">
+<img src="{{ site.baseurl }}/assets/images/history08/14_case_remdet6_sm.JPG" alt="Highslide JS" width="677" /></a> 
+<p>&nbsp;</p>

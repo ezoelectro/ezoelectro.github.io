@@ -1,0 +1,31 @@
+# Jekyll configuration
+
+name: EZOE
+description: Эзотерическая электроника
+
+# url is currently only used only for the RSS feed in feed.xml
+url: https://github.com/ezoelectro/ezoelectro.github.io
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: ''
+## default date_format
+date_format: 
+  title: "%Y-%m-%d"
+  archive: "%Y-%m-%d"
+  categories: "%Y-%m-%d"
+  tag: "%Y-%m-%d"
+# Language
+lan: "ru" 
+
+paginate: 24
+
+highlighter: rouge
+markdown: kramdown
+plugins: ['jekyll-paginate']
+
+gaaccount: UA-12871483-2
+
+exclude: ['README.md', 'LICENSE', "*.bak"]

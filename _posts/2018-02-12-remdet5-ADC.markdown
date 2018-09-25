@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "Remdet5 АЦП, REMdet6 первый макет"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Настройка АЦП микроконтроллера PIC18F46J50
+img: history07/V5_H03_sm.jpg # Add image post (optional)
+---
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_ADC_time.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_ADC_time.jpg" alt="Highslide JS" width="677" /></a></p> 
+<p><br>Канал передачи данных теперь  не проводной USB, а беспроводной Bluetooth 4.0:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG00.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG00.png" alt="Highslide JS" width="677" /></a></p> 
+   
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_H01.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_H01_sm.jpg" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_H02.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_H02_sm.jpg" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_H03.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_H03_sm.jpg" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_H04.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_H04_sm.jpg" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG01.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG01.png" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_channels.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_channels.jpg" alt="Highslide JS" width="677" /></a></p>      
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_sch01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_sch01_sm.JPG" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_sch02.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_sch02_sm.JPG" alt="Highslide JS" width="677" /></a></p>      
+
+   <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+<p><a  href="{{ site.baseurl }}/assets/images/history07/v5_ikled_v_temnote.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/v5_ikled_v_temnote.png" alt="Highslide JS" width="300" /></a></p> 
+	</div>
+	<div class="col-xs-6">
+<p><a  href="{{ site.baseurl }}/assets/images/history07/v5_ikled_na_svetu.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/v5_ikled_na_svetu.png" alt="Highslide JS" width="300" /></a></p>  
+   </div>
+</div>
+
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG02.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG02.png" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG03.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG03.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG04.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG04.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG05.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG05.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG06.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG06.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG07.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG07.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG08.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG08.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG09.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG09.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG10.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG10.png" alt="Highslide JS" width="677" /></a></p> 
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG11.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V5_BLE_PRG11.png" alt="Highslide JS" width="677" /></a></p>    
+<p><a  href="{{ site.baseurl }}/assets/images/history07/eye_control.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/eye_control.jpg" alt="Highslide JS" width="677" /></a></p>      
+
+<p><br><br> REMDET V6, Первый макет:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/REMDET6_01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/REMDET6_01.JPG" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/REMDET6_02.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/REMDET6_02.JPG" alt="Highslide JS" width="677" /></a></p>  
+<p><a  href="{{ site.baseurl }}/assets/images/history07/REMDET6_03.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/REMDET6_03.JPG" alt="Highslide JS" width="677" /></a></p>     
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V6_sch01.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V6_sch01_sm.JPG" alt="Highslide JS" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/history07/V6_sch02.JPG" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history07/V6_sch02_sm.JPG" alt="Highslide JS" width="677" /></a></p>
+     
+   

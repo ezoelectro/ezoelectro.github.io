@@ -1,46 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<link href="css/alex_style.css" rel="stylesheet" type="text/css" />
-<title>Эзотерика и Электроника</title>
-</head>
-<body>
-<div id="wrapper">
-  <h1 id="wrapper h1">Эзотерика и Электроника</h1>
-     
-  <h2 id="wrapper h2">Сайт посвящен разработке электронных устройств</h2>
-  <p class="centrContent">&nbsp;</p>
-  
-  
-  <ul>  
-  <li><a href="http://ezoe.ru/history1/page1.html">История разработок часть 1</a></li>
-  <li><a href="http://ezoe.ru/history2/page2.html">История разработок часть 2</a></li>
-  <li><a href="http://ezoe.ru/history3/page3.html">История разработок часть 3</a></li>
-  <li><a href="http://ezoe.ru/history04/page04.html">История разработок часть 4</a></li>
-  <li><a href="http://ezoe.ru/history05/page05.html">История разработок часть 5</a></li>
-  <li><a href="http://ezoe.ru/history06/page06.html">История разработок часть 6</a></li>
-  <li><a href="http://ezoe.ru/history07/page07.html">История разработок часть 7</a></li>
-  <li><a href="http://ezoe.ru/history08/page08.html">История разработок часть 8</a></li>
-  <li><a href="http://ezoe.ru/article01/IR-LED_IR-TRANZ_Power_experiments.html">Эксперименты с питанием инфракрасного светодиода</a></li>
-  <li><a href="http://ezoe.ru/article02/Bluetooth4.html">Эксперименты с Bluetooth 4.0</a></li>
-  <li><a href="http://ezoe.ru/article03/mask.html">Маска для сна - сделай сам</a></li>
-  <li><a href="http://ezoe.ru/stopsleep/stopsleep_disassembly.html">Разборка прибора STOPSLEEP</a></li>
-  <li><a href="http://ezoe.ru/files/files.html">Файлы</a></li>
-  <li><a href="http://ezoe.ru/contacts/index.html">Обо мне</a></li>
-  </ul>
-  
+---
+layout: default
+---
+{% assign trans = site.data.values[site.lan] %}
+{% for post in paginator.posts %}
+<div class="well article">
+<div style="cursor: pointer;" onclick="window.location='{{ site.baseurl }}{{ post.url }}';">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8" >
+			     <span class="post-date">
+        <!--
+        {% assign d = post.date | date: "%d" | plus:'0' %}
+        {{ post.date | date: "%B" }}
+        {% case d %}
+        {% when 1 or 21 or 31 %}{{ d }}st,
+        {% when 2 or 22 %}{{ d }}nd,
+        {% when 3 or 23 %}{{ d }}rd,
+        {% else %}{{ d }}th,
+        {% endcase %}
+        {{ post.date | date: "%Y" }}
+        -->
+        {% assign date_format = site.date_format.title %}
+        {{ post.date | date: date_format }}
+    </span>
+			<h2> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </h2>
+			{{ post.description }}
+			</div>
+			<div class="col-md-4"> 
+			
+			{% if post.img %}
+				 <a href="{{ site.baseurl }}{{ post.url }}">
+                 <img class="img-thumbnail" src={{ "\assets\images\" | prepend: site.baseurl | append : post.img}} alt="img"></a> 
+			{% else %}
+			{% endif %}
+			
+		    
+			</div>
+		</div>
+	</div>
 
-  <p>&nbsp;</p>
-  <p>...</p>
-  <p>Осознанные сновидения</p>
-  <p>Астральные путешествия</p>
-  <p>...</p>
-  <p>© ezoelectro</p>
-  </div>
+</div>
+</div>
+{% endfor %}
 
-
-
-
-</body>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">◄ Старые</a>
+  {% endif %}
+  <span class="page_number ">{{ trans.page }}: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">Новые ►</a>
+      {% else %}
+        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">Новые ►</a>
+      {% endif %}
+  {% endif %}
+</div>

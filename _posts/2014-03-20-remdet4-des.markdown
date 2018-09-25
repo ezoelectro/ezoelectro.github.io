@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "Remdet4, понижение частоты дескритизации"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: В связи с ограниченным объемом памяти
+img: history03/remdet4_soft_01_sm.png # Add image post (optional)
+---
+<p><a  href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_01.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_01_sm.png" alt="img" width="600" /></a></p>
+<p>В связи с тем что используемая флешка в приборе имеет емкость 2^18=262144байт (256Кбайт). Чтобы этой памяти хватило на 10 часов сна, необходимо понизить частоту дескритизации с 24Гц до 6Гц. И разрядность данных с датчика глаза с 10бит(0-1023) до 5бит(0-31) и данные с акселерометра с 10бит(0-1023) до 3бит(0-7). Это позволит в один байт записать данные с глаза и акселерометра. Итого время записи будет 262144/6=43690сек или 728мин или 12,13час.</p>
+<p><br></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_02.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_02_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_03.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_03_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_04.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_04_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_05.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_05_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_06.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_06_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_07.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_07_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_08.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_08_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_09.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_09_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_10.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_10_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<p>На этой группе графиков показан эксперимент с повтором камманд движений глаз. Три повтора эксперимента. На первой картинке красным цветом показаны данные после цифрового полосового фильтра 0.19Гц-5Гц с датчика газа. Синим после такого же цифрового фильтра данные с акселерометра, с средне арефметического отклонений трех осей. На втором графике видно понижение разрядности и дескритизации для данных с датчика глаза, на третьем графике тоже для акселерометра. Все процессы преобразования происходят внутри микроконтроллера, а выводятся в графики только в отладочном режиме при подключенном USB.</p>
+<p><br></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_11.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_11_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_12.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_12_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_13.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_13_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<p>На этих трех графиках показаны движения головы на подушке - синий цвет графиков. Движений глаз нет. На грасных графиках кажется что движение глаз есть, но на самом деле это  смещение маски на лице.</p>
+<p><br></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_14.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_14_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_15.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_15_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_16.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_16_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<p>Это пример демонстрации происходящих внутренних процессов в приборе в более крупном масштабе сигнала. А именно понижение частоты дескретизации и разрядности данных с датчика движения глаза с 24Гц до 6Гц</p>
+<p><br></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_17.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_17_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_18.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_18_sm.png" alt="img" width="235" /></a>
+	</div>
+	<div class="col-xs-4">
+	<a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_19.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_19_sm.png" alt="img" width="235" /></a>
+	</div>
+   </div>
+</div>
+<p>Здесь тоже самое но с акселерометра(синий цвет графиков), повороты головы. </p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_20.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_20_sm.png" alt="img" width="600" /></a></p>
+<p>Это тоже повороты головы на подушке в увеличенном масштабе.</p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_21.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_21_sm.png" alt="img" width="600" /></a></p>
+   <p>Это артефакты от движения маски на лице при повороте головы.</p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/remdet4_soft_22.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/history03/remdet4_soft_22_sm.png" alt="img" width="600" /></a></p>
+   <p>Это графики поворота головы.</p>
+<p>Это пример демонстрации происходящих внутренних процессов в приборе. А именно понижение частоты дескретизации данных с акселерометра с 24Гц до 6Гц</p>
+<p>На графике движения глаз есть изменения, на самом деле это маска болтается при движении головы. Для этого и нужен акселерометр, чтобы четко понять при анализе, что это не глаза двигаются.</p>
+<p>Суть этих графиков чтобы показать работу цифровых фильтров и  снижение разрядности и частоты дескретизации в том что примерная форма сигнала сохраняется. Главное что уменьшается нагрузка на средства хранения и анализа сигнала.</p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/usb_debug_cable1.JPG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history03/usb_debug_cable1_sm.JPG" alt="img" width="600" /></a></p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/usb_debug_cable2.JPG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history03/usb_debug_cable2_sm.JPG" alt="img" width="600" /></a></p>
+<p><br></p>
+<p><a href="{{ site.baseurl }}/assets/images/history03/usb_debug_cable3.JPG" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history03/usb_debug_cable3_sm.JPG" alt="img" width="600" /></a></p>
+<p>Так выглядит отладочный USB кабель. В приборе два режима Рабочий(без USB) и Отладочный(при подключенном USB). Данный кабель отличается от стандартного отсутствием линии питания от USB. Он нужен только для отладки и диагностики прибора, чтобы исключить подсветку индикаторов заряда батареи. Использование стандартного USB кабеля или этого кабеля в рабочем режиме не допускается из соображений электро безопастности для человека, и так же будет максимально ограничено праграммно.</p>

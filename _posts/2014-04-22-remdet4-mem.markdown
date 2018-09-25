@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Remdet4, алгоритм хранения данных"
+categories: Remdet
+tags: Remdet
+author: Alex Koblov
+description: Визуализация записи данных во внутреннюю память
+img: history04/mem_write_test.gif # Add image post (optional)
+---
+<p><br><a href="{{ site.baseurl }}/assets/images/history04/mem_write_test.gif" class="highslide" onclick="return hs.expand(this)">
+  <img src="{{ site.baseurl }}/assets/images/history04/mem_write_test.gif" alt="img" width="677" /></a></p>
+<p>Доделал алоритм записи данных во внутренюю память remtetectora_v4. Пока будет 10 сегментов данных. Длинна произвольная, при больших сегментах будет перезаписывать начало. Синусоида в нижнем графике просто для наглядности присутствия данных. В приборе вместо синусоиды данные с датчика глаза и акселерометра.</p>
