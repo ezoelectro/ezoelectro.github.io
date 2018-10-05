@@ -15,6 +15,8 @@ img: post004/pic4_sm.png # Add image post (optional)
 <p><br>Драйвер шагового двигателя A4988 использовал готовый покупной, только отрегулировал силу тока подстроечным резистором, чтобы моторчик не грелся и шаги не пропускал.</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic3.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post004/pic3_sm.jpg" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/post004/pic5.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/post004/pic5_sm.jpg" alt="img" width="677" /></a></p>
 <p><br>Моторчик может двигаться на заданное количество шагов в одну и другую сторону, с разной заданной скоростью. Вот какой график в итоге получился:</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic4.png" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post004/pic4_sm.png" alt="img" width="677" /></a></p>
