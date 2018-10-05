@@ -5,7 +5,7 @@ categories: Remdet
 tags: Remdet
 author: Alex Koblov
 description: Наглядный вид нелинейности датчика VCNL3020
-img: post004/pic4_sm.jpg # Add image post (optional)
+img: post004/pic4_sm.png # Add image post (optional)
 ---
 <p><br>Купил старый DVD привод за 100руб(1.5$), разобрал, и на его базе сделал более точный стенд для калибровки нелинейности:</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic1.jpg" class="highslide" onclick="return hs.expand(this)">
