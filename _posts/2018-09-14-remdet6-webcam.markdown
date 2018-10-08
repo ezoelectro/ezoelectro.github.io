@@ -7,7 +7,7 @@ author: Alex Koblov
 description: Прикрепил маленькую Web камеру для отслеживания странных явлений движения глаз
 img: post001/12_sm.jpg # Add image post (optional)
 ---
-<p><br>Купил Web-камеру на Aliexpress, диаметром 5.5мм:</p>
+<p><br>Купил Web-камеру на Aliexpress, диаметром 5.5мм (600руб(9$) потому что срочная доставка, вообще такие и по 300руб есть):</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post001/wedcam_5mm.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post001/wedcam_5mm_sm.jpg" alt="img" width="677" /></a></p>
 <p><br>Нарисовал держатель для Web-камеры:</p>

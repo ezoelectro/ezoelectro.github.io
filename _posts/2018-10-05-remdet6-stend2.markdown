@@ -12,7 +12,7 @@ img: post004/pic4_sm.png # Add image post (optional)
    <img src="{{ site.baseurl }}/assets/images/post004/pic1_sm.jpg" alt="img" width="677" /></a></p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic2.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post004/pic2_sm.jpg" alt="img" width="677" /></a></p>
-<p><br>Драйвер шагового двигателя A4988 использовал готовый покупной, только отрегулировал силу тока подстроечным резистором, чтобы моторчик не грелся и шаги не пропускал.</p>
+<p><br>Драйвер шагового двигателя A4988 использовал готовый покупной(150руб), только отрегулировал силу тока подстроечным резистором, чтобы моторчик не грелся и шаги не пропускал.</p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic3.jpg" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post004/pic3_sm.jpg" alt="img" width="677" /></a></p>
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic5.jpg" class="highslide" onclick="return hs.expand(this)">
@@ -21,4 +21,15 @@ img: post004/pic4_sm.png # Add image post (optional)
 <p><a  href="{{ site.baseurl }}/assets/images/post004/pic4.png" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post004/pic4_sm.png" alt="img" width="677" /></a></p>
 <p><br>Видно, что на графике расстояние Y1 не равно расстоянию Y5, а должно. Потомучто в реальности и там и там моторчик двигался на 5 шагов. Смысл линеаризации - применить к этому графику такой алгоритм, чтобы он выравнял расстояния Y1,Y2,Y3,Y4,Y5 между собой, так же A1-A5 между собой.</p>
-<p><img src="{{ site.baseurl }}/assets/images/post004/test_stend2.gif" alt="img"></p> 
+<p><img src="{{ site.baseurl }}/assets/images/post004/test_stend2.gif" alt="img" width="677"></p> 
+<p><br>Серый, белый, и черный цвета светоотражающей поверхности:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/post004/pic01.jpg" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/post004/pic01_sm.jpg" alt="img" width="677" /></a></p>
+<p><br>График так же меняется от светоотражающей способности поверхности:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/post004/pic02.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/post004/pic02_sm.png" alt="img" width="677" /></a></p>
+<p><br>Так движется тестовый стенд, скорость видео увеличена в 4 раза:</p>
+<p><img src="{{ site.baseurl }}/assets/images/post004/stend2_move.gif" alt="img" width="400"></p>
+<p><br>Графики с увеличением:</p>
+<p><img src="{{ site.baseurl }}/assets/images/post004/gray_white_black_gray.gif" alt="img" width="677"></p>
+ 
