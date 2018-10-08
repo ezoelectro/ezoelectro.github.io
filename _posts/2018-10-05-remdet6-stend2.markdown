@@ -32,4 +32,9 @@ img: post004/pic4_sm.png # Add image post (optional)
 <p><img src="{{ site.baseurl }}/assets/images/post004/stend2_move.gif" alt="img" width="400"></p>
 <p><br>Графики с увеличением:</p>
 <p><img src="{{ site.baseurl }}/assets/images/post004/gray_white_black_gray.gif" alt="img" width="677"></p>
+<p><br>Видно что после применения Hi-Pass фильтра, который пропускает все что выше 2Гц, различия в значении амплитуд достаточно большие, поэтому нужна линеаризация:</p>
+<p><a  href="{{ site.baseurl }}/assets/images/post004/pic03.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/post004/pic03_sm.png" alt="img" width="677" /></a></p>
+<p><a  href="{{ site.baseurl }}/assets/images/post004/pic04.png" class="highslide" onclick="return hs.expand(this)">
+   <img src="{{ site.baseurl }}/assets/images/post004/pic04_sm.png" alt="img" width="677" /></a></p>
  
