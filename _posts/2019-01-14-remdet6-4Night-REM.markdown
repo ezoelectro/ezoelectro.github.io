@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Remdet6, Начные записи REM фаз сна(БДГ)"
+title:  "Remdet6, Ночные записи REM фаз сна(БДГ)"
 categories: Remdet
 tags: Remdet
 author: Alex Koblov
