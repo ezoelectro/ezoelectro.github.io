@@ -31,7 +31,7 @@ img: post007/REM01_2019_01_11_sm.png # Add image post (optional)
 <p><br>Так выглядят диктофонные записи в аудио редакторе:.</p>      
 <p><a  href="{{ site.baseurl }}/assets/images/post007/dict_graph.png" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post007/dict_graph.png" alt="img" width="677" /></a></p>
-<p><br>График пульса, не до конца ночи, только до 05:16:52, дальше пульсометр почемуто отключился. На первый взгляю REM фазы по пульсу не видно, 
+<p><br>Решил записать пульс и посмотреть, как он кореллирует с фазами БДГ. График пульса, не до конца ночи, только до 05:16:52, дальше пульсометр почемуто отключился. На первый взгляд REM фазы по пульсу не видно, 
 возможно нужна дополнительная обработка сигнала от пульсометра:</p>   
 <p><a  href="{{ site.baseurl }}/assets/images/post007/REM07_2019_01_17_pulse.png" class="highslide" onclick="return hs.expand(this)">
    <img src="{{ site.baseurl }}/assets/images/post007/REM07_2019_01_17_pulse_sm.png" alt="img" width="677" /></a></p>
