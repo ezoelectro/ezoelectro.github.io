@@ -1,0 +1,2408 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PSelectro WEB Калькулятор 3.54</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- bootstrap@5.0.2/dist/css/bootstrap.min.css -->
+     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+	<link href="/assets/calc/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+  
+  <!-- bootstrap-icons@1.5.0/font/bootstrap-icons.css -->	
+	 <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha256-PDJQdTN7dolQWDASIoBVrjkuOEaI137FI15sqI3Oxu8=" crossorigin="anonymous">    -->
+	<link rel="stylesheet" href="/assets/calc/css/bootstrap-icons.css" integrity="sha256-PDJQdTN7dolQWDASIoBVrjkuOEaI137FI15sqI3Oxu8=" crossorigin="anonymous">  
+  
+   
+
+  <style>
+    @font-face {
+      font-family: pse_font;
+      /* Гарнитура шрифта Путь к файлу со шрифтом на сервере*/
+      src: url('/static/fonts/roboto-condensed/RobotoCondensed-Regular.ttf') format('truetype'); 
+      /* Гарнитура шрифта Путь к файлу со шрифтом для отладки на локальном компе*/
+      /* src:  url('RobotoCondensed-Regular.ttf') format('truetype'); */
+    }
+
+
+
+    body {
+      font-family: "pse_font", Arial;
+    }
+	
+
+    .label-pad {
+      padding-left: 0px;
+      padding-right: 0px;
+	  font-size: 13px !important; /* 16 */
+    }
+	
+	.label-pad2 {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .tooltip-inner {
+      background-color: #112b37; 
+      border: 1px solid #000000;
+      color: #FFFFFF;
+    }
+
+    .form-control-sm {
+      font-size: 16px !important; /* 16 */
+      line-height: 16px !important;
+      min-height: 26px;
+      height: 26px;
+      padding-left:  0px !important;
+      padding-right: 0px !important;
+    }
+
+    .form-control-sm:hover {
+      position: relative;
+      z-index: 20;
+      border-color: #6699FF;
+    }
+
+    .form-control-sm:focus {
+      position: relative;
+      z-index: 10;
+    }
+
+    .form-control-sm.form-control-sm-dlinshirin {
+      /*padding-left: 12px !important;*/
+      /*padding-right: 12px !important;*/
+      padding-left: 16px !important;
+
+    }
+
+    .form-select-sm {
+      font-size: 16px !important;
+      line-height: 16px !important;
+      padding-left: 12px;
+    }
+
+    .form-select-sm:hover {
+      position: relative;
+      z-index: 20;
+      border-color: #6699FF;
+    }
+
+    .form-select-sm:focus {
+      position: relative;
+      z-index: 10;
+    }
+
+
+
+
+    .butt-pad {
+      padding-left: 5px;
+    }
+
+    .nds-pad {
+      padding-left: 0px;
+    }
+	
+	.btn { /* уменьшенная кнопка для самого маленького экрана, далее увеличится */
+      border-radius: 0;
+      padding: 0.85rem 0.75rem;
+      font-size: 1rem;
+    }
+	
+	.btn-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 18px;
+      line-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+	
+	.btn-copytoclipboard {
+      border: 0;
+    }
+
+    .minfont2 {
+      font-size: 13px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+	  margin-top: 5px;
+    }
+
+    .fsiz {
+       font-size: 11pt; 
+    }
+
+    .standcol {}
+
+    .standcol:hover {
+      border-color: #EDEDED;
+      box-shadow: none;
+      cursor: default !important;
+    }
+
+    .exprcol {
+      background: #FEFBF2 !important;
+    }
+
+    .exprcol:hover {
+      border-color: #FFA500;
+      box-shadow: none;
+      cursor: default !important;
+    }
+
+    .supercol {
+      background: #FEF7F7 !important;
+    }
+
+    .supercol:hover {
+      border-color: red;
+      box-shadow: none;
+      cursor: default !important;
+    }
+
+
+
+    .indata {
+      padding: 10px 20px 20px !important; /* верх правоИлево низ */
+      border-radius: 4px;
+      margin-top: 0px;
+    }
+
+    .outresult {
+      padding: 10px 12px 20px;
+      border-radius: 4px;
+      margin-top: 0px;
+    }
+
+    .indetailform {
+      padding: 10px 2px 20px !important; /* верх правоИлево низ */
+      border-radius: 4px;
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+	
+	/* Экстрамалые девайсы («телефоны», менее 576px) */
+    /* Нет @media, т.к. это по умолчанию в Bootstrap */
+	
+@media (min-width: 370px) {
+      /*CUSTOM SIZE произвольно заданный размер*/
+      .indata {
+        padding: 30px 75px 20px !important;
+      }
+   
+	.btn {  /* увеличить до нормального размера */
+      padding: 0.85rem 1.25rem;
+    }
+	
+	.btn-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 18px;
+      line-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+	
+	.btn-copytoclipboard {
+      border: 0;
+    }
+	
+   .label-pad { /* восстановить размер шрифта*/
+	  font-size: 16px !important; 
+    }
+	
+	.label-pad2 { /* восстановить отступы*/
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+	
+	}
+	
+    @media (min-width: 576px) {
+      /* на sm */
+
+	.indata {
+      padding: 10px 40px 20px !important; /* верх правоИлево низ */
+    }
+	
+	.indetailform {
+      padding: 10px 20px 20px !important; /* верх правоИлево низ */
+      border-radius: 4px;
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+
+ 
+	  
+      .form-control-sm {
+        line-height: 20px !important;
+        min-height: 30px;
+        height: 30px;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+
+      .form-select-sm {
+        line-height: 20px !important;
+        padding-right: 28px;
+      }
+
+      .nds-pad {
+        padding-left: 12px;
+      }
+	  
+	  
+    }
+
+
+    @media (min-width: 768px) {
+
+      /* на md */
+      .indata {
+        padding: 30px 70px 20px !important;
+      }
+
+      .outresult {
+        padding: 30px 30px 20px !important;
+      }
+    }
+
+
+    @media (min-width: 992px) {
+
+      /* на lg */
+      .indata {
+        padding: 30px 20px 20px !important;
+      }
+
+      .outresult {
+        padding: 30px 12px 20px !important;
+      }
+
+      .form-control-sm {
+        padding-left: 4px;
+      }
+
+      .form-select-sm {
+        padding-left: 4px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+
+      /* на lx */
+      .indata {
+        padding: 30px 40px 20px !important;
+      }
+
+      .outresult {
+        padding: 30px 12px 20px !important;
+      }
+
+      .form-control-sm {
+        padding-left: 12px;
+      }
+
+      .form-select-sm {
+        padding-left: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body onload="rasch()">
+  <div class="container">
+
+    <div class="row px-1">
+
+
+      <div class="alert alert-primary alert-dismissible fade show minfont2 bg-transparent" role="alert">
+        <b>Внимание!</b> Результаты расчета предназначены для приблизительной оценки стоимости и сроков изготовления печатных
+        плат на нашем заводе по текущим базовым ценам прайс-листа от 19.01.2025г. На реальную стоимость изготовления
+        печатных плат может повлиять тип используемых материалов, толщина материала, толщина фольги, размер печатной
+        платы, сложность изготовления. Для того чтобы Вы получили наиболее точное представление о стоимости своего
+        проекта, предлагаем прислать нам запрос или проект для точного расчета цены.
+        <button type="button" class="btn btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+
+
+      <form class="indata col-sm-12 col-lg-6 text-start text-sm-end" id="start" target="_blank" action="https://lk.pselectro.ru" method="post">
+	  <!-- <form class="indata col-sm-12 col-lg-6 text-start text-sm-end" id="start"> -->
+        <input type="hidden" id="Action" name="Action" value="addplate">
+		<!-- <p><input type="submit" value="+" /></p> -->
+        <div class="row pb-2">
+		<!--<h2 class="text-start" onclick="document.getElementById('start').submit()">Данные для расчета</h2>-->
+		<h2 class="text-start">Данные для расчета</h2>
+          <label for="lname" class="col-sm-6">Количество слоев, шт</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm select numb_sloev_red_error" id="n_sloev_select" name="n_sloev"
+              onchange="rasch()">
+              <option value="1">1</option>
+              <option value="2" selected="selected">2</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+              <option value="14">14</option>
+              <option value="16">16</option>
+              <option value="18">18</option>
+            </select>
+          </div>
+          <label class="  col-sm-6">Длина ✕ Ширина, мм</label>
+          <div class="col-6 col-sm-3 col-md-3 pe-0 pe-sm-1">
+            <input type="number" step=".01" max="1000" class="form-control form-control-sm form-control-sm-dlinshirin"
+              id="dlinna_input" value="65.5" onchange="rasch()" name="dlinna">
+          </div>
+
+          <div class="col-6 offset-md-0 col-sm-3 col-md-3 ps-0 ps-sm-1">
+            <input type="number" step=".01" max="1000" class="form-control form-control-sm form-control-sm-dlinshirin"
+              id="shirina_input" value="35.5" onchange="rasch()" name="shirina">
+          </div>
+          <label for="lname" class=" col-sm-6 ">Толщина платы, мм</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm select tolsh_plati_select_error" id="tolsh_plati_select" onchange="rasch()" name="tolsh_plati">
+              <option value="0.10">0.10</option>
+              <option value="0.25">0.25</option>
+              <option value="0.36">0.36</option>
+              <option value="0.51">0.51</option>
+              <option value="0.71">0.71</option>
+              <option value="1.0">1.0 (типовая)</option>
+              <option value="1.5" selected="selected">1.5 (типовая)</option>
+              <option value="2.0">2.0 (типовая)</option>
+              <option value="2.5">2.5</option>
+              <option value="3.0">3.0</option>
+            </select>
+          </div>
+          <label for="lname" class=" col-sm-6 ">Толщина фольги, мкм</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm select tolsh_folgi_red_error" id="tolsh_folgi_select" name="tolsh_folgi"
+              onchange="rasch()">
+              <option value="18" selected="selected">18 (типовая)</option>
+              <option value="35">35 (типовая)</option>
+              <option value="50">50 (от 6 дм²)</option>
+              <option value="70">70 (от 6 дм²)</option>
+              <option value="105">105 (от 6 дм²)</option>
+            </select>
+          </div>
+          <label for="lname" class="col-sm-6">Паяльная маска</label>
+          <div class=" col-sm-6">
+            <select class="form-select form-select-sm select numb_mask_red_error" id="maska_select" onchange="rasch()" name="maska">
+              <option value="0">отсутствует</option>
+              <option value="1">с одной стороны</option>
+              <option value="2" selected="selected">с двух сторон</option>
+            </select>
+          </div>
+          <div class="offset-sm-6 col-sm-3 col-6 pe-0 pe-sm-1" id="mask_hide1">
+
+            <select style="background-color: #EEFFE9;" class="form-select form-select-sm select new"
+              id="mask_color_select" onchange="rasch()" name="mask_color" title="черная, красная, синяя, белая от 6дм²"
+              data-bs-toggle="tooltip" data-bs-placement="top">
+              <option style="background-color: #EEFFE9;" value="0" selected="selected">зеленая</option>
+              <option style="background-color: #ECECEC;" value="1">черная</option>
+              <option style="background-color: #FCECEC;" value="2">красная</option>
+              <option style="background-color: #E9EFFF;" value="3">синяя</option>
+              <option style="background-color: #FFFFFF;" value="4">белая</option>
+            </select>
+
+          </div>
+          <div class="offset-sm-0 col-sm-3 col-6 ps-0 ps-sm-1" id="mask_hide2">
+            <select class="form-select form-select-sm" id="mask_type_select" name="mask_type" onchange="rasch()">
+              <option value="0" selected="selected">жидкая</option>
+              <option value="1">пленочная</option>
+            </select>
+          </div>
+          <label for="lname" class=" col-sm-6 ">Маркировка</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm" id="markirovka_select" onchange="rasch()" name="markirovka">
+              <option value="0" selected="selected">отсутствует</option>
+              <option value="1">с одной стороны</option>
+              <option value="2">с двух сторон</option>
+            </select>
+          </div>
+          <label for="lname" class=" col-sm-6 ">Покрытие</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm select pokritie_select_error" id="pokritie_select" name="pokritie"
+			title="иммерсионные от 6дм²" data-bs-toggle="tooltip" data-bs-placement="top"
+              onchange="rasch()">
+              <option value="0" selected="selected">ПОС-63</option>
+              <option value="1">иммерсионное олово</option>
+              <option value="2">иммерсионное золото</option>
+              <option value="3">отсутствует (голая медь)</option>
+            </select>
+          </div>
+		  
+		  <!-- скрытая площадь золота -->
+			  <label for="lname1" class="col-11 col-sm-5 pe-0" id="gold_hide1" hidden>Площадь золота, мм²</label> 
+			  <div class="butt-pad col-1 ps-0" id="gold_hide3" hidden>
+              <button type="button" class="btn btn-circle bi bi-patch-exclamation bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Реальную площадь иммерсионного золочения вашей платы можно уточнить у нашего менеждера после обработки заказа нашим конструктором, т.к. она влияет на цену"></button>
+            </div> 
+			  <div class="col-sm-6" id="gold_hide2" hidden>
+				<input type="number" step="1" max="1000000" min="0" class="col-sm-6 form-control form-control-sm form-control-sm-dlinshirin"
+				  id="gold_s_input" value="1000" onchange="rasch()" name="gold_s_input" title="Суммарная площадь всех иммерсионно-позолоченных площадок и полигонов, мм². 1000мм²=10см²=0.1дм²"
+				  data-bs-toggle="tooltip" data-bs-placement="top">
+			  </div>
+		  <!-- скрытая площадь золота -->
+
+          <label for="lname" class=" col-sm-6 ">Разъемы ножевые</label>
+          <div class=" col-sm-6">
+            <select class="form-select form-select-sm" id="razem_yn_select" name="razem" onchange="rasch()">
+              <option value="0" selected="selected">нет</option>
+              <option value="1">золото</option>
+              <option value="2">никель</option>
+            </select>
+          </div>
+		  <!-- скрытые разъемы -->
+		  <label class="col-11 col-sm-5 pe-0" id="razem_hide3" hidden>шт, мм²</label>
+		  <div class="butt-pad col-1 ps-0" id="razem_hide4" hidden>
+              <button type="button" class="btn btn-circle bi bi-patch-exclamation bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Реальную площадь гальванического золочения разъемов вашей платы можно уточнить у нашего менеждера после обработки заказа нашим конструктором, т.к. она влияет на цену"></button>
+            </div>
+          <div class="col-sm-3 col-6 pe-0 pe-sm-1" id="razem_hide1" hidden>
+            <select class="form-select form-select-sm" id="razem_n_select" name="razem_n_select" onchange="rasch()">
+              <option value="1" selected="selected">1 шт</option>
+              <option value="2">2 шт</option>
+              <option value="3">3 шт</option>
+              <option value="4">4 шт</option>
+              <option value="5">5 шт</option>
+              <option value="6">6 шт</option>
+              <option value="7">7 шт</option>
+              <option value="8">8 шт</option>
+              <option value="9">9 шт</option>
+              <option value="10">10 шт</option>
+            </select>
+          </div>
+          <div class="offset-sm-0 col-sm-3 col-6 ps-0 ps-sm-1" id="razem_hide2" hidden>
+            <input type="number" step="1" max="1000000" min="0" class="form-control form-control-sm form-control-sm-dlinshirin"
+              id="razem_s_input" name="razem_s_input" value="1000" onchange="rasch()" title="Суммарная площадь всех гальванически - позолоченных разъемов одной платы, мм². 1000мм²=10см²=0.1дм²"
+              data-bs-toggle="tooltip" data-bs-placement="top">
+          </div>
+		  <!-- скрытые разъемы -->
+
+
+          <label for="lname" class=" col-sm-6 ">Обработка контура</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm" id="kontur_select" name="kontur" onchange="rasch()">
+              <option value="0">отсутствует</option>
+              <option value="1" selected="selected">фрезеровка</option>
+              <option value="2">скрайбирование</option>
+            </select>
+          </div>
+  
+
+		  <label class="col-11 col-sm-5 pe-0">Вырезы/окна, дм</label>
+		  <div class="butt-pad col-1 ps-0">
+              <button type="button" class="btn btn-circle bi bi-patch-exclamation bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Реальную длину внутренней фрезеровки вашей платы можно уточнить у нашего менеждера, после обработки заказа нашим конструктором, т.к. она влияет на цену"></button>
+            </div>
+		  
+		  <div class="col-sm-3 col-12 pe-sm-0 pe-sm-1" id="virez_yn_div">
+            <select class="form-select form-select-sm" id="virez_yn_select" name="virez_yn" onchange="rasch()">
+              <option value="0" selected="selected">нет</option>
+              <option value="1">есть</option>
+            </select>
+          </div>
+          <div class=" col-sm-3 col-12 ps-sm-0 ps-sm-1" id="virez_hide1" hidden>
+            <input type="number" step="0.01" max="10000000" min="0"
+              class="form-control form-control-sm form-control-sm-dlinshirin" id="virez_input" name="virez_dm2" value="1.24"
+              onchange="rasch()"
+              title="Суммарная длина внутренней фрезеровки / скрайбирования, дм.  Окна+вырезы+отверстия более &#216;5мм"
+              data-bs-toggle="tooltip" data-bs-placement="top" hidden>
+          </div>
+          <div class="col-sm-6 d-flex align-items-center">
+            <label for="lname" class=" ">Проводник(ободок)/зазор/отверстие, мм</label>
+
+		   <div class="butt-pad ps-0">
+              <button type="button" class="btn btn-circle bi bi-question-circle bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Выбор сложности изготовления в зависимости от минимального значения ширины проводника, ободка отверстия, зазора между проводниками, диаметра отверстия."></button>
+            </div>
+			<div class="butt-pad ps-0">
+              <button type="button" class="btn btn-circle bi bi-patch-exclamation bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Тип сложности вашей платы можно уточнить у нашего менеждера после обработки заказа нашим конструктором, т.к. он влияет на цену"></button>
+            </div>
+			
+			
+          </div>
+          <div class="col-sm-6 d-flex align-items-center">
+            <select class="form-select form-select-sm" id="klass_select" name="klass" onchange="rasch()">
+              <option value="4" selected="selected">от 0.125 / 0.125 / Ø 0.3 и больше</option>
+              <option value="6">менее 0.125 / 0.125 / Ø 0.3</option>
+            </select>
+          </div>
+          <label for="lname" class=" col-sm-6 ">Электроконтроль</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm" id="econtrol_select" name="econtrol" onchange="rasch()">
+              <option value="0" selected="selected">отсутствует</option>
+              <option value="1">выполняется</option>
+            </select>
+          </div>
+          <label for="lname" class=" col-sm-6 ">Материал</label>
+          <div class="col-sm-6">
+            <select class="form-select form-select-sm" id="material_select" name="material" onchange="rasch()">
+              <option value="1" selected="selected">FR4</option>
+              <!-- <option value="2">СТФ, Ми</option> -->
+              <option value="3">Алюминий (более 7дм²)</option>
+              <option value="4">FR4 High Tg (более 7дм²)</option>
+			  <option value="5">FR4 ITEQ (более 7дм²)</option>
+            </select>
+          </div>
+          <label class=" col-sm-6 ">Количество плат</label>
+          <div class="col-sm-6">
+            <input type="number" step="1" max="10000000"  min="1" class="form-control form-control-sm form-control-sm-dlinshirin"
+			title="от 1 шт" data-bs-toggle="tooltip" data-bs-placement="top"
+              id="n_plat_select" name="n_plat" value="44" onchange="rasch()">
+          </div>
+
+          <div class="col-sm-12 text-muted text-center" id="text_s1_s"><small>Площадь одной платы: x.xx дм². Общая площадь заказа: xx.xx дм².</small></div>
+
+          <div class="col-2"></div>
+          <div class="col-7">
+            <button type="button" class="btn btn-primary btn-sm shadow-sm" onclick="rasch()">Рассчитать</button>
+          </div>
+		  <!--
+		  <div class="col-12 d-flex justify-content-start">
+		  <div class="butt-pad">
+              <button type="button" class="btn btn-circle bi bi-patch-exclamation bg-transparent" data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="значение можно уточнить у нашего менеждера после обработки заказа, т.к. оно влияет на цену"></button>
+            </div>
+			
+		  <div class="text-muted text-start" id="text_sloj"><small>  - значение можно уточнить у нашего менеждера после обработки заказа, т.к. оно влияет на цену</small></div>
+		  
+		  
+		  </div>-->
+          <div class="col-2"></div>
+
+        </div>
+      </form>
+
+
+      <form class="outresult col-lg-6 text-center text-sm-end text-md-start" id="calculation">
+        <div class="row pb-1">
+			<ul class="col-12 list-inline">
+				<li class="list-inline-item" onclick="copy_calculation_report_to_clipboard()"><h2>Расчет заказа, руб.</h2></li>
+				<nobr>
+					<li class="list-inline-item" onclick="copy_calculation_report_to_clipboard()"><h5>с НДС (20%)</h5> </li>
+					<i class="bi bi-clipboard-plus btn btn-copytoclipboard p-1 pt-0" id="buttoncopytoclipboard" data-bs-toggle="tooltip" onclick="copy_calculation_report_to_clipboard()" title="Скопировать результаты расчета в буфер обмена"></i>
+				</nobr>
+			</ul>
+   
+			<div class=" col-4 px-0 px-sm-1 d-flex align-items-center">
+				<select class="form-select form-select-sm bg-transparent nds-pad" id="nds_select" onchange="rasch()" disabled hidden>
+			    <option selected="selected" value="1">с НДС (20%)</option>
+				<option value="0">без НДС</option>
+				</select>
+			</div>
+        </div>
+			
+        <div class="row pb-2">
+          <label class=" col-3 "> </label>
+          <label id="std_txt_label" class="col-3 text-center label-pad"><b>Cерийный</b><br>от XX дней<br>Стандарт</label>
+          <label id="expr_txt_label" class=" col-3 text-center overflow-hidden label-pad"><b>Ускоренный</b><br>от XX дней<br>+30%</label>
+          <label id="super_txt_label"
+            class=" col-3 text-center overflow-hidden label-pad"><b>СуперЭкспресс</b><br>от X дней<br>+100%</label>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-3 text-end label-pad2"><b>Новый</b></label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent standcol fsiz shadow-sm"
+              id="new_std" readonly="readonly" value="Подождите...">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol fsiz shadow-sm" id="new_expr"
+              readonly="readonly" value="...идет....">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent supercol fsiz shadow-sm"
+              id="new_super" readonly="readonly" value="...загрузка">
+          </div>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-3 text-end label-pad2">за 1 шт</label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent standcol fsiz"
+              id="odna_new_std" readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol fsiz" id="odna_new_expr"
+              readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end supercol fsiz" id="odna_new_super"
+              readonly="readonly">
+          </div>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-3 text-end label-pad2">за 1 дм²</label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent  standcol fsiz"
+              id="dm_new_std" readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol  fsiz" id="dm_new_expr"
+              readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end supercol  fsiz" id="dm_new_super"
+              readonly="readonly">
+          </div>
+        </div>
+
+        <div class="row pb-3">
+        </div>
+
+		<div class="row pb-2">
+          <label class=" col-3 "> </label>
+          <label id="std_txt_label2" class="col-3 text-center label-pad"><b>Cерийный</b><br>Стандарт</label>
+          <label id="expr_txt_label2" class=" col-3 text-center overflow-hidden label-pad"><b>Ускоренный</b><br>+30%</label>
+          <label id="super_txt_label2"
+            class=" col-3 text-center overflow-hidden label-pad"><b>СуперЭкспресс</b><br>+100%</label>
+        </div>
+		
+        <div class="row pb-2">
+          <label class=" col-3 overflow-hidden text-end label-pad label-pad2"><b>Повторный</b></label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent standcol fsiz shadow-sm"
+              id="old_std" readonly="readonly" value="Подождите...">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol fsiz shadow-sm" id="old_expr"
+              readonly="readonly" value="...идет....">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end supercol fsiz shadow-sm" id="old_super"
+              readonly="readonly" value="...загрузка">
+          </div>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-3 font-size-lg-10 text-end label-pad2">за 1 шт</label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent standcol fsiz"
+              id="odna_old_std" readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol fsiz" id="odna_old_expr"
+              readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end supercol fsiz" id="odna_old_super"
+              readonly="readonly">
+          </div>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-3 text-end label-pad2">за 1 дм²</label>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end bg-transparent standcol fsiz"
+              id="dm_old_std" readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end exprcol fsiz" id="dm_old_expr"
+              readonly="readonly">
+          </div>
+          <div class="col-sm-3 col-3 px-0 px-sm-1">
+            <input type="text" class="form-control form-control-sm text-end supercol fsiz" id="dm_old_super"
+              readonly="readonly">
+          </div>
+        </div>
+		
+		<div class="row pb-3">
+        </div>
+		<!--
+        <div class="col-sm-11 text-muted text-center offset-sm-1 col-12" >
+          <p><small>* стоимость подготовки к изготовлению не увеличивается</small></p>
+        </div> -->
+
+        <div class="row">
+          <div class="d-flex offset-1 col-4 justify-content-center">
+            <button id="btn_hide_show" type="button" class="btn btn-outline-secondary btn-sm shadow-sm"
+              onclick="show_hide()" title="Подробное описание расчета стоимости заказа" data-bs-toggle="tooltip" data-bs-placement="top">Подробно</button>
+          </div>
+		  
+		  <div class="d-flex col-3 justify-content-center">
+            <button id="btn_hide_show" type="button" class="btn btn-outline-secondary btn-sm shadow-sm"
+              onclick="exportToExcel()" title="Сформировать и скачать бланк заказа по указанным параметрам. Пожалуйста дозаполните его и пришлите вместе с платой на электронную почту" data-bs-toggle="tooltip" data-bs-placement="top">Бланк</button>
+          </div>
+		  		  
+		  <div class="d-flex col-4 justify-content-center">
+        
+		<!-- <button type="button" class="btn btn-success btn-sm shadow-sm"
+			onclick='location.href="https://pselectro.ru/zakaz-pechatnyh-plat"'
+			  title="Переход на инструкцию, как оформить заказ" data-bs-toggle="tooltip" data-bs-placement="top" >Заказать</button> 
+			-->  
+			  
+	 <!-- <a class="btn btn-success btn-sm shadow-sm" href="https://pselectro.ru/zakaz-pechatnyh-plat" target="_parent" role="button" title="Переход на инструкцию, как оформить заказ" data-bs-toggle="tooltip" data-bs-placement="top">Заказать</a> -->
+	 <!-- <a class="btn btn-success btn-sm shadow-sm" href="https://pselectro.ru/zakaz-pechatnyh-plat" target="_parent" role="button" title="Переход на инструкцию, как оформить заказ" data-bs-toggle="tooltip" data-bs-placement="top">Заказать</a> -->
+	 <!-- <a class="btn btn-success btn-sm shadow-sm" onclick="document.getElementById('start').submit()" target="_parent" role="button" title="Оформить заказ в личном кабинете" data-bs-toggle="tooltip" data-bs-placement="top">Заказать</a> -->
+	 <a class="btn btn-success btn-sm shadow-sm" onclick="ym(71484055,'reachGoal','zakaz');document.getElementById('start').submit();" target="_blank" role="button" title="Оформить заказ в личном кабинете" data-bs-toggle="tooltip" data-bs-placement="top">Заказать</a>
+	 
+	 
+	 
+	 
+	  <!--<form class="indata col-sm-12 col-lg-6 text-start text-sm-end" id="start" action="http://93.92.220.218:8079/lk/eisapi.dll/" method="post">-->
+	  <!--<h2 class="text-start" onclick="document.getElementById('start').submit()">Данные для расчета</h2>-->
+	 
+	 <!-- <button type="submit111" class="btn btn-primary btn-sm shadow-sm">Отправить</button> -->
+	 <!-- <p><input type="submit" value="Отправить"></p> -->
+	 <!--<button type="button" class="btn btn-primary btn-sm shadow-sm" onclick="send_to_server()">Отправить</button>-->
+	
+
+          </div>
+		  		  
+        </div>
+
+      </form>
+ 
+    </div>
+
+    <div id="indetail" class="collapse">
+
+      <form class="indetailform col-12">
+
+        <div class="row">
+
+          <h2 class="col-9 col-sm-10 col-md-11">Подробное описание расчета стоимости заказа</h2>
+          <div class="col-1">
+            <button type="button" class="btn btn-outline-secondary shadow-sm" onclick="close_indetail()">✕</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class=" col-sm-12 ml-2">
+            <h4>Расчет стоимости подготовки к изготовлению, руб. <nobr>(без НДС)</nobr> <small class="text-muted">только для нового заказа</small></h4>
+          </label>
+        </div>
+
+        <div class="row pb-2">
+          <label class=" col-sm-12 " id="KF_label">КФ=...</label>
+          <label id="P1_label" class=" col-sm-12 ">П1=...</label>
+          <label id="P2_label" class=" col-sm-12 ">П2=...</label>
+          <label id="P3_label" class=" col-sm-12 ">П3=...</label>
+          <label id="KPF_label" class=" col-sm-12 ">КПФ=...</label>
+        </div>
+        <div class="row pb-2">
+          <label id="PODG_label" class=" col-sm-12 pb-3"><b>Подготовка</b>=...</label>
+          <label id="plata_s_label" class=" col-sm-12 ">Площадь одной платы...</label>
+          <label id="obsh_s_label" class=" col-sm-12 ">Общая площадь заказа...</label>
+        </div>
+        <div class="row pb-2 pt-2">
+          <h5 class="col-sm-12 text-center">Прайс-лист, руб. <nobr>(без НДС) за 1дм²</nobr></h5>
+        </div>
+        <div class="table-responsive col-lg-8 offset-lg-2">
+
+          <table class="table table-sm table-striped text-center">
+            <colgroup>
+              <col style="background-color: #ffffff">
+              </col>
+              <col id="tbcol0" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol1" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol2" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol3" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol4" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol5" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol6" style="background-color: #ffffff">
+              </col>
+              <col id="tbcol7" style="background-color: #ffffff">
+              </col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">S-дм²</th>
+                <th scope="col">до 20</th>
+                <th scope="col">>20</th>
+                <th scope="col">>50</th>
+                <th scope="col">>100</th>
+                <th scope="col">>300</th>
+                <th scope="col">>500</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ОПП</th>
+				<td>220</td>
+				<td>200</td>
+				<td>193</td>
+				<td>155</td>
+				<td>144</td>
+				<td>135</td>
+              </tr>
+              <tr>
+                <th scope="row">АЛЮМ</th>
+				<td>388</td>
+				<td>342</td>
+				<td>312</td>
+				<td>281</td>
+				<td>265</td>
+				<td>254</td>
+              </tr>
+              <tr>
+                <th scope="row">ДПП</th>
+				<td>296</td>
+				<td>283</td>
+				<td>265</td>
+				<td>220</td>
+				<td>208</td>
+				<td>182</td>
+              </tr>
+              <tr>
+                <th scope="row">4ПП</th>
+				<td>531</td>
+				<td>481</td>
+				<td>442</td>
+				<td>406</td>
+				<td>385</td>
+				<td>353</td>
+              </tr>
+              <tr>
+                <th scope="row">6ПП</th>
+				<td>712</td>
+				<td>613</td>
+				<td>565</td>
+				<td>550</td>
+				<td>530</td>
+				<td>510</td>
+              </tr>
+              <tr>
+                <th scope="row">8ПП</th>
+				<td>935</td>
+				<td>803</td>
+				<td>739</td>
+				<td>683</td>
+				<td>640</td>
+				<td>609</td>
+              </tr>
+              <tr>
+                <th scope="row">10ПП</th>
+				<td>1224</td>
+				<td>1100</td>
+				<td>1019</td>
+				<td>901</td>
+				<td>848</td>
+				<td>805</td>
+              </tr>
+              <tr>
+                <th scope="row">12ПП</th>
+				<td>1496</td>
+				<td>1364</td>
+				<td>1250</td>
+				<td>1060</td>
+				<td>988</td>
+				<td>957</td>
+              </tr>
+              <tr>
+                <th scope="row">14ПП</th>
+				<td>1760</td>
+				<td>1603</td>
+				<td>1448</td>
+				<td>1228</td>
+				<td>1133</td>
+				<td>1110</td>
+              </tr>
+              <tr>
+                <th scope="row">16ПП</th>
+				<td>2008</td>
+				<td>1850</td>
+				<td>1672</td>
+				<td>1435</td>
+				<td>1318</td>
+				<td>1300</td>
+              </tr>
+              <tr>
+                <th scope="row">18ПП</th>
+				<td>2280</td>
+				<td>2123</td>
+				<td>1918</td>
+				<td>1632</td>
+				<td>1543</td>
+				<td>1500</td>
+              </tr>
+              <tr>
+                <th scope="row">МСК2</th>
+				<td>44</td>
+				<td>39</td>
+				<td>34</td>
+				<td>29</td>
+				<td>25</td>
+				<td>23</td>
+              </tr>
+              <tr>
+                <th scope="row">МРК1</th>
+				<td>18</td>
+				<td>16</td>
+				<td>13</td>
+				<td>10</td>
+				<td>9</td>
+				<td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row pb-0 m-0">
+          <div class="col-sm-12 text-muted">
+            <p>ОПП - однослойные печатные платы, АЛЮМ- платы на алюминиевом основании, ДПП - двухслойные, 4ПП-четырех
+              слойные + электроконтроль, ... , МСК2 - паяльная маска с двух сторон, МРК1 - маркировка с одной стороны</p>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <label class=" col-sm-12 ml-2">
+            <h4>Расчет стоимости изготовления заказа, руб. <nobr>(без НДС)</nobr> <small class="text-muted">нового или повторного</small></h4>
+          </label>
+        </div>
+        <div class="row pb-2">
+          <label id="PP1_label" class=" col-sm-12 ">Цена_табличная...</label>
+		  <label id="D1_label" class=" col-sm-12 ">Д1=...</label>
+		  <label id="D2_label" class=" col-sm-12 ">Д2=...</label>
+		  <label id="D3_label" class=" col-sm-12 ">Д3=...</label>
+		  <label id="D_label" class=" col-sm-12 ">Д=Д1+Д2+Д3=...</label>
+          <label id="PP_label" class=" col-sm-12 ">ПП=...</label>
+          <label id="M_label" class=" col-sm-12 ">М=...</label>
+          <label id="MR_label" class=" col-sm-12 ">МР=...</label>
+          <label id="IZ_label" class=" col-sm-12 ">ИЗ=...</label>
+          <label id="ImO_label" class=" col-sm-12 ">ИО=...</label>
+          <label id="ET_label" class=" col-sm-12 ">ЭТ=...</label>
+          <label id="FS_label" class=" col-sm-12 ">ФС=...</label>
+          <label id="R_label" class=" col-sm-12 ">Р=...</label>
+          <label id="K1_label" class=" col-sm-12 ">K1=...</label>
+          <label id="K2_label" class=" col-sm-12 ">K2=...</label>
+          <label id="K3_label" class=" col-sm-12 ">К3=...</label>
+          <label id="K_label" class=" col-sm-12 ">К=...</label>
+        </div>
+
+        <div class="row pb-2">
+          <label id="IZGOTOVL_label" class=" col-sm-12 ">Изготовление=...</label>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Bundle with Popper bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  -->
+  <script src="/assets/calc/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  
+  <!-- Подключение библиотеки ExcelJS exceljs@4.3.0/dist/exceljs.min.js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script> -->
+  <script src="/assets/calc/js/exceljs.min.js"></script> 
+
+  <script>
+
+    //----------------------------
+    // Один из способов инициализировать все подсказки на странице – обратиться к ним по атрибуту data-bs-toggle
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+    //----------------------------
+    var ECONTR34_OLD_STATE = 0; // в этой переменной сохраняется наличие или отсутствие электроконтроля при необязательном электроконтроле для 3 и 4 класса однослойных и двуслойных плат. Если не хранить это состояние то при переключении с многослоек на дпп или опп, электроконтроль всегда будет включеным.
+    var FLAG_ENTER_IN_OBYAZATELNIY_ELCONTR = 0; // этот флаг показывает, что расчет находится в состоянии обязательного электроконтроля для многослоек или опп/дпп 5го и 6го класса.
+	
+	var FLAG_2MASK = 0; //флаг для маски с двух сторон на однослойке, подтверждает что так и нужно
+
+	function roundToFixed(value, precision) {
+		const roundedValue = Number(value.toFixed(precision));
+		const stringValue = roundedValue.toString();
+		return stringValue.endsWith('0') ? stringValue.slice(0, -1) : stringValue;
+	}
+
+    function rasch() {
+
+const price_list = [ // до20, >20, >50, >100, >300, >500
+		[ 220, 200, 193, 155, 144, 135],// OPP 1x
+		[ 388, 342, 312, 281, 265, 254],// Alum
+		[ 296, 283, 265, 220, 208, 182],// DPP 2x
+		[ 531, 481, 442, 406, 385, 353],// 4x
+		[ 712, 613, 565, 550, 530, 510],// 6x
+		[ 935, 803, 739, 683, 640, 609],// 8x
+		[1224,1100,1019, 901, 848, 805],// 10x
+		[1496,1364,1250,1060, 988, 957],// 12x
+		[1760,1603,1448,1228,1133,1110],// 14x
+		[2008,1850,1672,1435,1318,1300],// 16x
+		[2280,2123,1918,1632,1543,1500],// 18x
+		[  44,  39,  34,  29,  25,  23],// mask 2x
+		[  18,  16,  13,  10,   9,   8] // mark 1x
+		];
+
+
+      price_obrab_files = 600;
+      price_fotoshablon = 300;
+      price_markirovka = price_fotoshablon * 2; // фотошаблон + сито 
+      price_e_tester_opp_dpp = 30;  // Цена электроконтроля для однослойных и двуслойных плат. Далее в расчете, ее можно включать или нет по желанию клиента, если плата однослойка или двуслойка 4го класса. Если же 5й или 6й класс, то электроконтроль обязателен. (для многослойных плат цена электроконтроля уже включена в цену по таблице и от электроконтроля отказаться нельзя, он для многослойных плат обязателен)
+      price_frez_fr4 = 3.0;
+      price_frez_alum = 5.0;
+      price_im_gold = 63;
+      price_im_gold_mm2 = 0.021;
+      price_razem = 31;
+      price_razem_zol_mm2 = 0.40;
+      price_im_olov = 42;
+      price_plen_mask = 190;
+      price_DPP20mm = 33;
+      price_DPP25mm = 54;
+      price_DPP30mm = 65;
+      price_folga50 = 30;
+      price_folga70 = 48;
+      price_folga105 = 70;
+      price_folga1835 = 0;
+      price_STF = 20;
+      price_STF2mm = 44;
+      price_HiTg_odin_sloy = 18;
+	  price_ITEQ_odin_sloy = 32;
+	  
+	  D_kf=0;
+	  D1_kf=0;
+	  D2_kf=0;
+	  D3_kf=0;
+
+      //--------Init---------
+	  // для фольги 50/70/105 нет наценки за повышенный класс, т.к. просто невозможно изготовить
+	  if(parseInt(document.all.tolsh_folgi_select.value)>35) document.all.klass_select.value=4;
+	  
+	 //для разной толщины фольги менять тескт условия перехода в 6й класс
+	  switch (parseInt(document.all.tolsh_folgi_select.value)) {
+              case 18: { document.querySelector('#klass_select option[value="4"]').text = "от 0.125 / 0.125 / Ø 0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "менее 0.125 / 0.125 / Ø 0.3"; break;}
+			  case 35: { document.querySelector('#klass_select option[value="4"]').text = "от 0.150 / 0.150 / Ø 0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "менее 0.150 / 0.150 / Ø 0.3"; break;}
+			  
+			  case 50: { document.querySelector('#klass_select option[value="4"]').text = "от0.270(0.150)/0.270/Ø0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "нет / нет / нет"; break;}
+			  
+			  case 70: { document.querySelector('#klass_select option[value="4"]').text = "от0.300(0.150)/0.300/Ø0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "нет / нет / нет"; break;}
+			  
+			  case 105:{ document.querySelector('#klass_select option[value="4"]').text = "от0.350(0.150)/0.350/Ø0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "нет / нет / нет"; break;}
+              
+			  default: { document.querySelector('#klass_select option[value="4"]').text = "от 0.125 / 0.125 / Ø 0.3 и больше"; 
+			             document.querySelector('#klass_select option[value="6"]').text = "менее 0.125 / 0.125 / Ø 0.3"; break;}
+            }
+	  
+      //--изменить цвет выпадающего списка маски
+      var selectMASKcolor = document.querySelector('.select.new');
+      selectMASKcolor.addEventListener('change', function () {
+        switch (parseInt(document.all.mask_color_select.value)) {
+          case 0: selectMASKcolor.style.backgroundColor = "#EEFFE9"; break; //зеленая
+          case 1: selectMASKcolor.style.backgroundColor = "#ECECEC"; break; //черная
+          case 2: selectMASKcolor.style.backgroundColor = "#FCECEC"; break; //красная
+          case 3: selectMASKcolor.style.backgroundColor = "#E9EFFF"; break; //синяя
+          case 4: selectMASKcolor.style.backgroundColor = "#FFFFFF"; break; //белая
+        }
+      });
+      // -- цвет select для кол-ва слоев (при фольге 50,70,105, ОПП переводится на ДПП---
+      // при нажатии кнопки мыши поменять цвет select на белый в числе слоев
+      var selectMASKcolor2 = document.querySelector('.select.numb_sloev_red_error');
+      selectMASKcolor2.addEventListener('mousedown', function () {
+        selectMASKcolor2.style.backgroundColor = "#FFFFFF"; //белый
+      });
+      // при нажатии кнопки мыши поменять цвет select на белый в числе слоев маски используется для алюминия и для простых однослоек	
+      var selectMASKcolor3 = document.querySelector('.select.numb_mask_red_error');
+      selectMASKcolor3.addEventListener('mousedown', function () {
+        selectMASKcolor3.style.backgroundColor = "#FFFFFF"; //белый
+		FLAG_2MASK=1;
+      });
+
+      // при нажатии кнопки мыши поменять цвет select на белый в толщине фольги	
+      var selectMASKcolor4 = document.querySelector('.select.tolsh_folgi_red_error');
+      selectMASKcolor4.addEventListener('mousedown', function () {
+        selectMASKcolor4.style.backgroundColor = "#FFFFFF"; //белый
+      });
+
+      // при нажатии кнопки мыши поменять цвет select на белый в покрытиях	
+      var selectMASKcolor5 = document.querySelector('.select.pokritie_select_error');
+      selectMASKcolor5.addEventListener('mousedown', function () {
+        selectMASKcolor5.style.backgroundColor = "#FFFFFF"; //белый
+      });
+	  
+	  // при нажатии кнопки мыши поменять цвет select на белый в толщине платы	
+      var selectMASKcolor6 = document.querySelector('.select.tolsh_plati_select_error');
+      selectMASKcolor6.addEventListener('mousedown', function () {
+        selectMASKcolor6.style.backgroundColor = "#FFFFFF"; //белый
+      });
+
+      // У плат на материале Алюминий максимум 1 слой. 
+      // Если в раскрывающемся списке материалов выбран материала выбран алюминий, то в раскрывающемся списке количества слоев выбрать один слой, и поэтому другое кол-во слоев выбрать нельзя, не 2, не 4, не 6... и подсветить красным цветом изменение числа слоев
+      if (parseInt(document.all.material_select.value) == 3) {
+        if (document.all.n_sloev_select.value != 1) //число слоев меди
+        {
+          document.all.n_sloev_select.value = 1;
+          var selectMASKcolor2 = document.querySelector('.select.numb_sloev_red_error');
+          selectMASKcolor2.style.backgroundColor = "#ffff8a"; //желтый
+        }
+      }
+
+      // у плат на Алюминии максимум 1 маска, т.е. маска не может быть с двух сторон, но маска может отсутствовоать полностью
+      // Если в раскрывающемся списке материалов выбран материала выбран алюминий, и одновременно в раскрывающемся списке выбора кол-ва масок выбрана маска с 2х сторон, то поставить принудительно маску с одной стороны. Если маска вообще не выбрана, то и останется без маски.
+      if (parseInt(document.all.material_select.value) == 3) if (parseInt(document.all.maska_select.value) == 2) {
+        if (document.all.maska_select.value != 1) // число слоев маски
+        {
+          document.all.maska_select.value = 1;
+          var selectMASKcolor3 = document.querySelector('.select.numb_mask_red_error');
+          selectMASKcolor3.style.backgroundColor = "#ffff8a"; //желтый
+        }
+      }
+
+      //Цена фрезеровки Алюминиевых плат и плат на материале FR4, разная.
+      //Если выбран материал Алюминий то переменная price_frez=price_frez_alum
+      if (parseInt(document.all.material_select.value) == 3) price_frez = price_frez_alum; else price_frez = price_frez_fr4;
+
+      //У плат на материале Алюминий всегда фольга толщиной 35мкм (не 18, не 50, не 70, не 105)
+      //Если в раскрывающемся списке материалов выбран материала выбран материал алюминий, то в раскрывающемся списке выбора толщин фольги выбрать фольгу 35мкм.
+      if (parseInt(document.all.material_select.value) == 3) {
+        if (document.all.tolsh_folgi_select.value != 35) {
+          document.all.tolsh_folgi_select.value = 35;
+          var selectMASKcolor4 = document.querySelector('.select.tolsh_folgi_red_error');
+          selectMASKcolor4.style.backgroundColor = "#ffff8a"; //желтый
+        }
+
+      }
+	  
+	  //У плат на материале Алюминий толщиной платы 1 или 1.5мм 
+      //Если в раскрывающемся списке материалов выбран материала выбран материал алюминий, то проверить толщину платы
+      if (parseInt(document.all.material_select.value) == 3) {
+        if (document.all.tolsh_plati_select.value != 1.5) {
+			if (document.all.tolsh_plati_select.value != 1.0) {
+			                       document.all.tolsh_plati_select.value = 1.5;
+								   var selectMASKcolor6 = document.querySelector('.select.tolsh_plati_select_error');
+								   selectMASKcolor6.style.backgroundColor = "#ffff8a"; //желтый
+			  }
+         }
+      }
+
+
+      // старое 2021.04.19: Платы с толщиной фольги 50,70,105мкм могут быть только двуслойными, мы закупаем только такой материал. 
+      //if((parseInt(document.all.material_select.value)!=3)&&((document.all.tolsh_folgi_select.value==50)||(document.all.tolsh_folgi_select.value==70)||(document.all.tolsh_folgi_select.value==105))) document.all.n_sloev_select.value=2;
+
+      // Если клиен хочет однослойную плату с фольгой 50,70,105мкм, то мы все равно берем цену как за двухслойную.
+      // Если в выпаюающем списке материалов выбран любой материал кроме Алюминия и в выпаюающем списке материалов выбрана фольга 50 или 70 или 105 то принудительно поставить в выпадающем списке количеств слоев - два слоя.
+      if ((parseInt(document.all.material_select.value) != 3) && (document.all.n_sloev_select.value == 1) && ((document.all.tolsh_folgi_select.value == 50) || (document.all.tolsh_folgi_select.value == 70) || (document.all.tolsh_folgi_select.value == 105))) {
+
+        document.all.n_sloev_select.value = 2;
+        // -- цвет select для кол-ва слоев (при фольге 50,70,105, ОПП переводится на ДПП---
+        var selectMASKcolor2 = document.querySelector('.select.numb_sloev_red_error');
+        selectMASKcolor2.style.backgroundColor = "#ffff8a"; //желтый
+      }
+
+      // У высокотемпературного материала HiTg толщина фольги максимум 35мкм, т.е. 18 или 35 (но не 50, 70, 105)
+      // Если в выпадающем списке материалов выбран материал HiTg, и в выпадающем списке выбора толщин выбрана фольга толще чем 35, то поставить фольгу 35мкм, при этом остается возможность переключиться на 18мкм фольгу
+      if (parseInt(document.all.material_select.value) == 4) if (document.all.tolsh_folgi_select.value > 35) document.all.tolsh_folgi_select.value = 35;
+
+      //у HiTg толщина платы максимум 2мм
+      // Если в выпадающем списке материалов выбран высокотемпературный материал HiTg, и в выпадающем списке толщин платы выбрана толщина более чем 2мм, то принудительно поставить тощину 2мм
+      if (parseInt(document.all.material_select.value) == 4) if (document.all.tolsh_plati_select.value > 2) document.all.tolsh_plati_select.value = "2.0";
+
+      //-------------для тонких плат нельзя ПОС-63 (только без покрытия - голая медь или иммерсионные олово/золото)
+      if (document.all.tolsh_plati_select.value < 0.71) if (parseInt(document.all.pokritie_select.value) == 0) {
+        document.all.pokritie_select.value = 1;
+        //подкраска желтым при авто-замене покрытия 
+        var selectMASKcolor5 = document.querySelector('.select.pokritie_select_error');
+        selectMASKcolor5.style.backgroundColor = "#ffff8a"; //желтый
+      }
+	  
+	  //-------------для односторонних плат подсветить желтым кол-во слоев маски
+	  
+      if (parseInt(document.all.n_sloev_select.value)<2)  {if(parseInt(document.all.maska_select.value) == 2){
+		
+        //подкраска желтым
+                   if(FLAG_2MASK==0)		
+				   {
+				        document.all.maska_select.value = 1;
+						var selectMASKcolor31 = document.querySelector('.select.numb_mask_red_error');
+						selectMASKcolor31.style.backgroundColor = "#ffff8a"; //желтый
+				   }
+      }} else {FLAG_2MASK=0;}
+
+
+      // переменной NUMB_sloev присваевается значение выбранное в выпадающем списке числа слоев: 1 или 2 или 4,6,8,10,12,14,16,18
+      NUMB_sloev = parseInt(document.all.n_sloev_select.value);
+
+      // переменной KLASS присваевается значение из выпадающего списка выбора класса точности печатной платы: 4 или 5 или 6
+      KLASS = parseInt(document.all.klass_select.value);
+
+      // Для плат однослойных и двуслойных и плат низкого класса т.е. 4го, клиент может самостоятельно выбирать делать ему электроконтроль или нет. 
+      // Если же плата больше чем 2 слоя, то она многослойная поэтому электроконтроль обязателен и он уже включен в табличную цену по прайсу, т.е. в отдельной переменной "ET"-ElectroTest он не просчитывается.
+      // Если плата одно или двуслойная но высокого класса 5 или 6, то электроконтроль просчитывается в переменной "ET" и добавляется к цене производства.
+      // Дальнейший блок IF с флагами предназначен для того чтобы в вывести на экран один из трех видов текста:
+      // 1. Электроконтроль отсутствует 
+      // 2. Электроконтроль выполняется
+      // 3. Электроконтроль входит в стоимость изготовления
+      // 2й и 3й пункт текста выводятся через поле с выпадающим списком "Выполняется" там просто текст меняется и для дальнейших вычислений они равны единице, т.е. электроконтроль выполняется независимо каким текстом он обозначен. А первый пункт нулю, т.е. электроконтроль не выполняется.
+      // т.е. все эти заморочки с флагами и состояниями чтобы вывести 3 вида текста в одном поле. А когда возвращались из обязательного электроконтроля восстанавливалось значение при электроконтроле по выбору.
+      if ((NUMB_sloev > 2) || (KLASS > 4)) {
+        if (FLAG_ENTER_IN_OBYAZATELNIY_ELCONTR == 0) ECONTR34_OLD_STATE = document.all.econtrol_select.value;
+        FLAG_ENTER_IN_OBYAZATELNIY_ELCONTR = 1; document.all.econtrol_select.value = 1; document.all.econtrol_select.disabled = 1;
+        document.all.econtrol_select.options[1].text = "входит в стоимость изготовления";
+      }
+      else {
+        if (FLAG_ENTER_IN_OBYAZATELNIY_ELCONTR == 1) { document.all.econtrol_select.value = ECONTR34_OLD_STATE; FLAG_ENTER_IN_OBYAZATELNIY_ELCONTR = 0; }
+        document.all.econtrol_select.disabled = 0; document.all.econtrol_select.options[1].text = "выполняется";
+      }
+      // но по факту на выходе у нас одна переменная document.all.econtrol_select.value которая содержит 0 или 1, т.е. электроконтроль не выполняется или выполняется.
+      // которая в дальнейшем используется в расчетах.
+      // ET1 это цена электроконтроля за 1дм2, а в переменной ET общая цена электроконтроля для всего заказа.
+      // в переменной ET идет расчет электроконтроля для ОПП ДПП всех классов 4,5,6. только для 4 го класса его клиент может включить или выключить самостоятельно, а для 5 и 6класса он считается принудительно и отключить его клиент не может.
+      // для многослоек в переменной ET электроконтроль не считается, т.е. 
+
+      //заменяем в длинне ширине и вырезе запятую на точку, для дальнейшик корректных расчетов. 
+      tmp_val = document.all.shirina_input.value;
+      document.all.shirina_input.value = tmp_val.replace(/\,/, ".");
+      tmp_val = document.all.dlinna_input.value;
+      document.all.dlinna_input.value = tmp_val.replace(/\,/, ".");
+      tmp_val = document.all.virez_input.value;
+      document.all.virez_input.value = tmp_val.replace(/\,/, ".");
+
+      // если маска отсутствует то запретить выбор ее цвета и ее типа жидкая или пленочная, и скрыть ячейки
+      if (parseInt(document.all.maska_select.value) == 0) 
+	  { document.all.mask_color_select.disabled = 1; 
+	    document.all.mask_type_select.disabled = 1; 
+		document.getElementById("mask_hide1").hidden=1;
+		document.getElementById("mask_hide2").hidden=1;} 
+	  else 
+	  { document.all.mask_color_select.disabled = 0; 
+	    document.all.mask_type_select.disabled = 0; 
+		document.getElementById("mask_hide1").hidden=0;
+		document.getElementById("mask_hide2").hidden=0;}
+
+      // далее расчет подготовки к производству
+      //----------Podgotovka---------
+      // число слоев маски, может принимать значения 0,1,2.
+      NUMB_mask = parseInt(document.all.maska_select.value);
+
+      // число слоев маркировки, может принимать значения 0,1,2.
+      NUMB_mark = parseInt(document.all.markirovka_select.value);
+
+      // кол-во заказываемых плат
+      NUMB_plat = parseInt(document.all.n_plat_select.value); // parseInt нужно для отсева из цифр букв и чтобы не было ошибки NaN
+	  if (NUMB_plat<0) { NUMB_plat =1; }
+      document.all.n_plat_select.value = NUMB_plat; //возвращается назад для того что при вводе с цифрами букв, останутся только цифры, и когда отрицательное то будет 1
+
+      //длинна платы
+      dlinna = parseFloat(document.all.dlinna_input.value);
+      if (dlinna > 1000) { dlinna = 1000; document.all.dlinna_input.value = 1000; }
+
+      // ширина платы
+      shirina = parseFloat(document.all.shirina_input.value);
+      if (shirina > 1000) { shirina = 1000; document.all.shirina_input.value = 1000; }
+
+      // толщина платы может принимать следующие значения 0.10, 0.25, 0.36, 0.51, 0.71, 1.0, 1.5, 2.0, 2.5, 3.0
+      tolsh_plati = parseFloat(document.all.tolsh_plati_select.value);
+
+      // толщина фольги, может принимать следующие значения 18, 35, 50, 70, 105
+      tolsh_folgi = parseInt(document.all.tolsh_folgi_select.value);
+
+      // if ((tolsh_plati == 2.0) && (tolsh_folgi == 18) && (NUMB_sloev == 2)) document.all.tolsh_folgi_select.value = 35; 
+	  
+	  KF = price_obrab_files * 1;
+      P1 = price_fotoshablon * NUMB_sloev;
+      P2 = price_fotoshablon * NUMB_mask;
+      //P3 = price_markirovka * NUMB_mark;
+	  if(NUMB_mark>0) P3=price_markirovka; else P3=0; //Подготовка на маркировку один слой или 2 слоя, цена одинаковая.
+      if (parseInt(document.all.nds_select.value) == 1) k_nds = 1.20; else k_nds = 1.0;
+      if (KLASS > 5) KPF = 1.5; else KPF = 1;
+      PODG = (KF * KPF) + P1 + P2 + P3;
+      OTbuf = "<b>КФ</b> = Кол-во типов плат * " + price_obrab_files + " руб. = <nobr><b>" + KF + "</b> руб.</nobr>";
+      document.getElementById("KF_label").innerHTML = OTbuf;
+      OTbuf = "<b>П1</b> = Кол-во слоев меди * " + price_fotoshablon + " руб. = <nobr><b>" + P1 + "</b> руб.</nobr>";
+      document.getElementById("P1_label").innerHTML = OTbuf;
+      OTbuf = "<b>П2</b> = Кол-во слоев маски * " + price_fotoshablon + " руб.= <nobr><b>" + P2 + "</b> руб.</nobr>";
+      document.getElementById("P2_label").innerHTML = OTbuf;
+      //OTbuf = "<b>П3</b> = Кол-во слоев маркировки * " + price_markirovka + " руб.= <nobr><b>" + P3 + "</b> руб.</nobr>";
+	  OTbuf = "<b>П3</b> = " + price_markirovka + " руб, если кол-во слоев маркировки 1 или 2 = <nobr><b>" + P3 + "</b> руб.</nobr>";
+      document.getElementById("P3_label").innerHTML = OTbuf;
+      OTbuf = "<b>KПФ</b> = 1.5, если проводник (ободок) / зазор / диаметр менее 0.125 / 0.125 / &#216; 0.3 (мм)= <b>" + KPF + "</b>.";
+      document.getElementById("KPF_label").innerHTML = OTbuf;
+      OTbuf = "<h5><b>Подготовка</b> = (КФ * КПФ) + П1 + П2 + П3= <nobr><b>" + PODG + "</b> руб.</nobr></h5>";
+      document.getElementById("PODG_label").innerHTML = OTbuf;
+      S_odna_plata = (dlinna * shirina) / 10000;
+      OTbuf = Math.round(S_odna_plata * 10000) / 10000;
+      OTbuf = "<b>S1</b> = Площадь одной платы = <b>" + OTbuf + "</b> дм²";
+      document.getElementById("plata_s_label").innerHTML = OTbuf;
+      S_obsh = S_odna_plata * NUMB_plat;
+      OTbuf = Math.round(S_obsh * 10000) / 10000;
+      OTbuf = "<b>S</b> = Общая площадь заказа = <b>" + OTbuf + "</b> дм²";
+      document.getElementById("obsh_s_label").innerHTML = OTbuf;
+      //--------- prn S -----
+      var s1_for_txt = Math.round(S_odna_plata * 100) / 100;
+      var sALL_for_txt = Math.round(S_obsh * 100) / 100;
+      OTbuf = "<small>Площадь одной платы: " + s1_for_txt + " дм². Общая площадь заказа: " + sALL_for_txt + " дм².</small>";
+      document.getElementById("text_s1_s").innerHTML = OTbuf;
+      //--------- prn S -----
+      //---------IZGOTOVLENIE---------
+      if (S_obsh <= 20) k_price = 0; else
+        if (S_obsh <= 50) k_price = 1; else
+          if (S_obsh <= 100) k_price = 2; else
+              if (S_obsh <= 300) k_price = 3; else
+			    if (S_obsh <= 500) k_price = 4; else k_price = 5;
+                  
+
+      //----выделение столбца с площадью в таблице --------         
+      var color_list = [8];
+      for (var i = 0; i <= 7; i++) {
+        if (i == k_price) color_list[i] = "#a0f0a0"; else color_list[i] = "#ffffff";
+      }
+
+      var tbcol = document.getElementById("tbcol0");
+      tbcol.style.backgroundColor = color_list[0];
+      tbcol = document.getElementById("tbcol1");
+      tbcol.style.backgroundColor = color_list[1];
+      tbcol = document.getElementById("tbcol2");
+      tbcol.style.backgroundColor = color_list[2];
+      tbcol = document.getElementById("tbcol3");
+      tbcol.style.backgroundColor = color_list[3];
+      tbcol = document.getElementById("tbcol4");
+      tbcol.style.backgroundColor = color_list[4];
+      tbcol = document.getElementById("tbcol5");
+      tbcol.style.backgroundColor = color_list[5];
+      tbcol = document.getElementById("tbcol6");
+      tbcol.style.backgroundColor = color_list[6];
+      tbcol = document.getElementById("tbcol7");
+      tbcol.style.backgroundColor = color_list[7];
+      switch (NUMB_sloev) {
+        case 1: PP1 = price_list[0][k_price]; break;
+        case 2: PP1 = price_list[2][k_price]; break;
+        case 4: PP1 = price_list[3][k_price]; break;
+        case 6: PP1 = price_list[4][k_price]; break;
+        case 8: PP1 = price_list[5][k_price]; break;
+        case 10: PP1 = price_list[6][k_price]; break;
+        case 12: PP1 = price_list[7][k_price]; break;
+        case 14: PP1 = price_list[8][k_price]; break;
+        case 16: PP1 = price_list[9][k_price]; break;
+        case 18: PP1 = price_list[10][k_price]; break;
+      }
+      if (parseInt(document.all.material_select.value) == 3) PP1 = price_list[1][k_price]; /*Alum*/
+
+      // надбавки (добавки) Д=Д1+Д2+Д3
+	  
+	  if (NUMB_sloev == 2) {
+            switch (tolsh_plati) {
+              case 2:   D1_kf = price_DPP20mm; break;
+              case 2.5: D1_kf = price_DPP25mm; break;
+              case 3:   D1_kf = price_DPP30mm; break;
+              default:  D1_kf = 0; break;
+            }
+          } else { D1_kf = 0; }
+		  
+	  switch (tolsh_folgi) {
+              case 50: D2_kf = price_folga50; break;
+              case 70: D2_kf = price_folga70; break;
+              case 105: D2_kf = price_folga105; break;
+              default: D2_kf = 0; break;
+            }	  
+	
+	
+	  switch (parseInt(document.all.material_select.value)) {
+		case 4: { //High Tg
+		  D3price_kf = price_HiTg_odin_sloy;
+		  D3_kf=D3price_kf * NUMB_sloev;
+          break;
+        }
+		
+		case 5: { //ITEQ
+		   D3price_kf = price_ITEQ_odin_sloy;
+		   D3_kf = D3price_kf * NUMB_sloev;
+           break;
+        }
+       
+        default: { D3price_kf = 0; D3_kf=0; break; }
+      }
+  
+	  // надбавка за материал
+	  D_kf=D1_kf+D2_kf+D3_kf;
+	  
+	  OTbuf = "<b>Д1</b>= ДПП 2.0 мм / 2.5 мм / 3.0 мм ("+price_DPP20mm+" руб / "+price_DPP25mm+" руб / "+price_DPP30mm+" руб)<b>= " + D1_kf + "</b> руб. за 1дм²";
+      document.getElementById("D1_label").innerHTML = OTbuf;
+	  OTbuf = "<b>Д2</b>= Фольга 50мкм / 70мкм / 105мкм ("+price_folga50+" руб / "+price_folga70+" руб / "+price_folga105+" руб)<b>= " + D2_kf + "</b> руб. за 1дм²";
+      document.getElementById("D2_label").innerHTML = OTbuf;
+	  OTbuf = "<b>Д3</b>= Материал HTG / ITEQ ("+price_HiTg_odin_sloy+" руб / "+price_ITEQ_odin_sloy+" руб) за один слой = " + D3price_kf + " руб * (число слоев = "+NUMB_sloev+") = <b>"+D3_kf+ "</b> руб. за 1дм²";
+      document.getElementById("D3_label").innerHTML = OTbuf;
+	  OTbuf = "<b>Д</b>= Д1+Д2+Д3= <b>" + D_kf + "</b> руб. за 1дм²";
+      document.getElementById("D_label").innerHTML = OTbuf;
+      OTbuf = "<b>Цена_табличная</b> (материал, сверление, травление, меднение и эл.контроль МПП)= <b>" + PP1 + "</b> руб. за 1дм²";
+      document.getElementById("PP1_label").innerHTML = OTbuf;
+      PP1D = PP1 + D_kf;
+      M1 = price_list[11][k_price]; /*mask2x*/
+      if (parseInt(document.all.mask_type_select.value) == 1) M1 = price_plen_mask;
+      switch (NUMB_mask) {
+        case 0: M1 = 0; break;
+        case 1: M1 = M1 / 2; break;
+        case 2: M1 = M1; break;
+      }
+      if (parseInt(document.all.mask_color_select.value) != 0) M1 = M1 * 2;
+      switch (NUMB_mark) { /*mark1x*/
+        case 0: MR1 = 0; break;
+        case 1: MR1 = price_list[12][k_price]; break;
+        case 2: MR1 = price_list[12][k_price] * 2; break;
+      }
+      
+	  // скрывать площадь золота		
+	  if (parseInt(document.all.pokritie_select.value) == 2) {
+	  document.all.gold_s_input.disabled = 0; 
+	  document.getElementById("gold_hide1").hidden=0; 
+	  document.getElementById("gold_hide2").hidden=0;
+	  document.getElementById("gold_hide3").hidden=0;
+	  } else {
+	  document.all.gold_s_input.disabled = 1; 
+	  document.getElementById("gold_hide1").hidden=1; 
+	  document.getElementById("gold_hide2").hidden=1;
+	  document.getElementById("gold_hide3").hidden=1;
+	  }
+	 
+	  if (parseInt(document.all.pokritie_select.value) == 1)  ImO1 = price_im_olov; else ImO1 = 0;
+      if (parseInt(document.all.pokritie_select.value) == 2)  IZ1 = price_im_gold+(price_im_gold_mm2*parseInt(document.all.gold_s_input.value)/S_odna_plata); else IZ1 = 0;
+		
+      
+	  
+	  
+	  //document.all.gold_s_input.hidden=1;
+	  //document.getElementById("gold_hide1").hidden=1; document.getElementById("gold_hide2").hidden=1;
+	  
+	// всплывающая подсказка о площади золота
+	  Gold_proc_min=5;
+	  Gold_proc_med=20;
+	  Gold_proc_max=50;
+	  S_min_gold=Math.round((S_odna_plata*Gold_proc_min/100)*10000);
+	  S_mid_gold=Math.round((S_odna_plata*Gold_proc_med/100)*10000);
+	  S_max_gold=Math.round((S_odna_plata*Gold_proc_max/100)*10000);
+	  OTbuf="Суммарная площадь всех иммерсионно - позолоченных площадок и полигонов открытых от маски одной платы, мм². 1000мм² = 10см² = 0.1дм², т.е. дм²*10000=мм². Справочно в среднем, для данной платы, площадью "+    roundToFixed(S_odna_plata,4)       +"дм²"+"="+parseInt(S_odna_plata*10000)+"мм², слабое заполнение "+Gold_proc_min+"%="+S_min_gold+"мм², среднее заполнение "+Gold_proc_med+"%="+S_mid_gold+"мм², плотное заполнение "+Gold_proc_max+"%="+S_max_gold+"мм².";
+	  document.getElementById('gold_s_input').setAttribute('data-bs-original-title', OTbuf);
+      
+	  if (NUMB_sloev > 2) ET1 = 0; else ET1 = parseInt(document.all.econtrol_select.value) * price_e_tester_opp_dpp;
+	  
+	  // всплывающая подсказка о кол-ве плат
+	  // толщина платы  менее 1мм
+	  // толщина платы  более 2мм
+	  // материал не FR4
+	  // маска не зеленая
+	  // покрытие не ПОС-63
+	  // разъемы есть
+	  // 6класс
+	  // слоев более или равно 6
+	  // толщина фольги более 35
+	  if ((tolsh_plati<1)||(tolsh_plati>2)||(parseInt(document.all.material_select.value) != 1)||(parseInt(document.all.mask_color_select.value)!=0)||(parseInt(document.all.pokritie_select.value) != 0)||(parseInt(document.all.razem_yn_select.value)!=0)||(KLASS==6)||(NUMB_sloev>=6)||(tolsh_folgi>35)){
+		OTbuf="от 6дм² (от "+Math.round(6/S_odna_plata)+" шт)";
+	    document.getElementById('n_plat_select').setAttribute('data-bs-original-title', OTbuf);
+	  }
+	  else {
+	    OTbuf="от 1 шт";
+	    document.getElementById('n_plat_select').setAttribute('data-bs-original-title', OTbuf);
+	  }
+	  // скрывать разъемы		
+	  if (parseInt(document.all.razem_yn_select.value) == 0) 
+	    { 
+		  document.getElementById("razem_hide1").hidden=1; 
+	      document.getElementById("razem_hide2").hidden=1;
+		  document.getElementById("razem_hide3").hidden=1;
+		  document.getElementById("razem_hide4").hidden=1;
+		} else 
+		{
+		document.getElementById("razem_hide1").hidden=0; 
+		document.getElementById("razem_hide2").hidden=0;
+		document.getElementById("razem_hide3").hidden=0;
+		document.getElementById("razem_hide4").hidden=0;
+		
+		} 
+	  
+      switch (parseInt(document.all.razem_yn_select.value)) {
+        case 0: { document.all.razem_n_select.disabled = 1; document.all.razem_s_input.disabled = 1; R1 = 0; break; }
+        case 1: { document.all.razem_n_select.disabled = 0; document.all.razem_s_input.disabled = 0; R1 = price_razem * parseInt(document.all.razem_n_select.value) + price_razem_zol_mm2 * parseInt(document.all.razem_s_input.value); break; }
+        case 2: { document.all.razem_n_select.disabled = 0; document.all.razem_s_input.disabled = 1; R1 = price_razem * parseInt(document.all.razem_n_select.value); break; }
+      }
+      if (parseInt(document.all.virez_yn_select.value) == 1) { 
+	  // показать
+	  document.all.virez_input.hidden = 0; 
+	  virezF = parseFloat(document.all.virez_input.value);
+      document.getElementById("virez_hide1").hidden=0;
+      var virezdiv = document.getElementById("virez_yn_div")
+      virezdiv.classList.remove("col-sm-6");
+      virezdiv.classList.add("col-sm-3");
+	  virezdiv.classList.add("pe-sm-0");
+	  virezdiv.classList.add("pe-sm-1");
+ 	  
+	  } else {
+     // скрыть	  
+	  document.all.virez_input.hidden = 1; virezF = 0;
+      document.getElementById("virez_hide1").hidden=1;
+
+	  //<div class="col-sm-3 col-6 pe-0 pe-sm-1" id="virez_yn_div">
+	  var virezdiv = document.getElementById("virez_yn_div")
+      virezdiv.classList.remove("col-sm-3");
+      virezdiv.classList.add("col-sm-6");
+	  virezdiv.classList.remove("pe-sm-0");
+	  virezdiv.classList.remove("pe-sm-1");
+	  }
+	  
+      if (parseInt(document.all.kontur_select.value) != 0) FS1 = price_frez; else FS1 = 0;
+      PP = PP1D * S_obsh;
+      M = M1 * S_obsh;
+      MR = MR1 * S_obsh;
+      IZ = IZ1 * S_obsh;
+      ImO = ImO1 * S_obsh;
+      ET = ET1 * S_obsh;
+	  obrezL=((dlinna * 2 + shirina * 2) / 100)
+	  ALL_FREZ=obrezL + virezF
+      FS = FS1 * (ALL_FREZ) * NUMB_plat;
+      R = R1 * NUMB_plat;
+      switch (KLASS) {
+        case 3: K1 = 1; break;
+        case 4: K1 = 1; break;
+        case 5: K1 = 1; break;
+        case 6: K1 = 1.25; break;
+        default: K1 = 1.0; break;
+      }
+      switch (tolsh_plati) {
+        case 0.10: if (NUMB_sloev <= 2) K2 = 1.2; else K2 = 1.0; break;
+        case 0.25: if (NUMB_sloev <= 2) K2 = 1.2; else K2 = 1.0; break;
+		case 0.36: if (NUMB_sloev <= 2) K2 = 1.2; else K2 = 1.0; break;
+        default: K2 = 1.0; break;
+      }
+      if (S_odna_plata > 5) K3 = 1.12; else K3 = 1;
+      K = K1 * K2 * K3;
+	  IZGOTOVL_bez_k = PP + M + MR + IZ + ImO + ET + FS + R;
+	  IZGOTOVL = IZGOTOVL_bez_k * K;
+	  
+	  
+      OTbuf = (Math.round(PP * 100) / 100).toFixed(2);
+      OTbuf = "<b>ПП</b> = S * (Цена_табличная + Д)= <b>" + OTbuf + "</b> руб. (" + PP1D + " руб. за 1дм²)";
+      document.getElementById("PP_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(M * 100) / 100).toFixed(2);
+      OTbuf = "<b>М</b>= S * цена(маска)= <b>" + OTbuf + "</b> руб. (" + M1 + " руб. за 1дм²)";
+      document.getElementById("M_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(MR * 100) / 100).toFixed(2);
+      OTbuf = "<b>МР</b>= S * цена(маркировка)= <b>" + OTbuf + "</b> руб. (" + MR1 + " руб. за 1дм²)";
+      document.getElementById("MR_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(IZ * 100) / 100).toFixed(2);
+      OTbuf = "<b>ИЗ</b>= S * цена(иммерсионное золото)= <b>" + OTbuf + "</b> руб. (" + (Math.round(IZ1 * 100) / 100)+ " руб. за 1дм² = ("+price_im_gold+"руб. за 1дм² + (("+price_im_gold_mm2+"руб. за 1 мм² * Sплощадок= "+parseInt(document.all.gold_s_input.value)+"мм²) / (S1= "+(Math.round(S_odna_plata * 10000) / 10000)+"дм²))))";
+      document.getElementById("IZ_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(ImO * 100) / 100).toFixed(2);
+      OTbuf = "<b>ИО</b>= S * цена(иммерсионное олово)= <b>" + OTbuf + "</b> руб. (" + ImO1 + " руб. за 1дм²)";
+      document.getElementById("ImO_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(ET * 100) / 100).toFixed(2);
+      OTbuf = "<b>ЭТ</b>= S * цена(эл.контр. ОПП/ДПП)= <b>" + OTbuf + "</b> руб. (" + ET1 + " руб. за 1дм²)";
+      document.getElementById("ET_label").innerHTML = OTbuf;
+      OTbuf = "<b>ФС</b>= LF * кол-во плат * цена(фрез./скрайб.)= <b>" + (Math.round(FS * 100) / 100).toFixed(2) + "</b> руб. (" + FS1 + " руб. за 1дм), (LF * кол-во плат= "+(Math.round(ALL_FREZ*NUMB_plat * 100) / 100)+"дм), (LF= "+(Math.round(ALL_FREZ * 10000) / 10000)+"дм= ((L= "+(Math.round(obrezL * 10000) / 10000)+" дм)+(F= "+(Math.round(virezF * 10000) / 10000)+" дм)))";
+      document.getElementById("FS_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(R * 100) / 100).toFixed(2);
+      OTbuf = "<b>Р</b>= Кол-во плат * цена(золочение разъемов)= <b>" + OTbuf + "</b> руб. (" + R1 + " руб. для одной платы= ((кол-во разъемов= "+parseInt(document.all.razem_n_select.value)+" шт) * "+price_razem+"руб + "+price_razem_zol_mm2+"руб за 1 мм² * (S всех разъемов одной платы = "+parseInt(document.all.razem_s_input.value)+" мм²)))";
+      document.getElementById("R_label").innerHTML = OTbuf;
+      OTbuf = "<b>K1</b>= 1.25 если проводник (ободок) / зазор / диаметр менее 0.125 / 0.125 / &#216;0.3 (мм)= <b>" + K1+"</b>";
+      document.getElementById("K1_label").innerHTML = OTbuf;
+      OTbuf = "<b>K2</b>= 1.2 если ОПП/ДПП &lt; 0.36 мм = <b>" + K2+"</b>";
+      document.getElementById("K2_label").innerHTML = OTbuf;
+      OTbuf = "<b>К3</b>= 1.12 если размер одной платы или блока(без брака) &gt; 5дм² = <b>" + K3+"</b>";
+      document.getElementById("K3_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(K * 100) / 100).toFixed(2);
+      OTbuf = "<b>К</b>=K1 * K2 * K3= <b>" + OTbuf+"</b>";
+      document.getElementById("K_label").innerHTML = OTbuf;
+      OTbuf = (Math.round(IZGOTOVL * 100) / 100).toFixed(2);
+      //OTbuf = "<h5><b>Изготовление</b>= (ПП + М + МР + ИЗ + ИО + ЭТ + ФС + Р) * K= <nobr><b>" + OTbuf + "</b> руб.</nobr></h5>";
+	  OTbuf = "<h5><b>Изготовление</b>= (ПП + М + МР + ИЗ + ИО + ЭТ + ФС + Р) * K = "+(Math.round(IZGOTOVL_bez_k * 100) / 100).toFixed(2)+" * K = <nobr><b>" + OTbuf + "</b> руб.</nobr></h5>";
+      document.getElementById("IZGOTOVL_label").innerHTML = OTbuf;
+
+//      if (S_obsh <= 1000) document.all.new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds * 100) / 100).toFixed(2); else document.all.new_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds * 100) / 100).toFixed(2); else document.all.new_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds * 100) / 100).toFixed(2); else document.all.new_super.value = "до1000дм²";
+//      if (S_obsh <= 1000) document.all.dm_new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds / S_obsh * 100) / 100).toFixed(2);  else document.all.dm_new_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.dm_new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds / S_obsh * 100) / 100).toFixed(2);  else document.all.dm_new_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.dm_new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_new_super.value = "до1000дм²";
+//      if (S_obsh <= 1000) document.all.odna_new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_new_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.odna_new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_new_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.odna_new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_new_super.value = "до1000дм²";
+//      if (S_obsh <= 1000) document.all.old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds * 100) / 100).toFixed(2);  else document.all.old_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds * 100) / 100).toFixed(2);  else document.all.old_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds * 100) / 100).toFixed(2); else document.all.old_super.value = "до1000дм²";
+//      if (S_obsh <= 1000) document.all.dm_old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_old_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.dm_old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_old_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.dm_old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_old_super.value = "до1000дм²";
+//      if (S_obsh <= 1000) document.all.odna_old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_old_std.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.odna_old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_old_expr.value = "по запросу";
+//      if (S_obsh <= 1000) document.all.odna_old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_old_super.value = "до1000дм²";
+
+      document.all.new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds * 100) / 100).toFixed(2);
+      document.all.new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds * 100) / 100).toFixed(2); else document.all.new_super.value = "до1000дм²";
+      document.all.dm_new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds / S_obsh * 100) / 100).toFixed(2);
+      document.all.dm_new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds / S_obsh * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.dm_new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_new_super.value = "до1000дм²";
+      document.all.odna_new_std.value = (Math.round((PODG + IZGOTOVL * 1.0) * k_nds / NUMB_plat * 100) / 100).toFixed(2);
+      document.all.odna_new_expr.value = (Math.round((PODG + IZGOTOVL * 1.3) * k_nds / NUMB_plat * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.odna_new_super.value = (Math.round((PODG + IZGOTOVL * 2.0) * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_new_super.value = "до1000дм²";
+      document.all.old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds * 100) / 100).toFixed(2);
+      document.all.old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds * 100) / 100).toFixed(2); else document.all.old_super.value = "до1000дм²";
+      document.all.dm_old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds / S_obsh * 100) / 100).toFixed(2);
+      document.all.dm_old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds / S_obsh * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.dm_old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds / S_obsh * 100) / 100).toFixed(2); else document.all.dm_old_super.value = "до1000дм²";
+      document.all.odna_old_std.value = (Math.round(IZGOTOVL * 1.0 * k_nds / NUMB_plat * 100) / 100).toFixed(2);
+      document.all.odna_old_expr.value = (Math.round(IZGOTOVL * 1.3 * k_nds / NUMB_plat * 100) / 100).toFixed(2);
+      if (S_obsh <= 1000) document.all.odna_old_super.value = (Math.round(IZGOTOVL * 2.0 * k_nds / NUMB_plat * 100) / 100).toFixed(2); else document.all.odna_old_super.value = "до1000дм²";
+      document.getElementById("new_std").innerHTML = IZGOTOVL;
+
+	  //if(document.all.new_expr.value!="по запросу")
+	  procent_expr=Math.round((100*document.all.new_expr.value/document.all.new_std.value)-100);
+	  //else procent_expr="30";
+	 //procent_expr="30";
+	  
+	  if(document.all.new_super.value!="до1000дм²")
+	   procent_super=Math.round((100*document.all.new_super.value/document.all.new_std.value)-100);
+	  else procent_super="100";
+	  
+      if (NUMB_sloev <= 2) { // ОПП и ДПП
+	
+		if (parseInt(document.all.material_select.value) == 3) // проверка на алюминий 	
+		 { // алюминий (новый)
+		   OTbuf = "<b>Cерийный</b><br>от 17 дней<br>Стандарт";
+           document.getElementById("std_txt_label").innerHTML = OTbuf;
+           OTbuf = "<b>Ускоренный</b><br>от 10 дней<br>+"+procent_expr+"%<br>";
+           document.getElementById("expr_txt_label").innerHTML = OTbuf;
+           OTbuf = "<b>СуперЭкспресс</b><br>от 5 дней<br>+"+procent_super+"%";
+           document.getElementById("super_txt_label").innerHTML = OTbuf;
+		 }
+		 else { // все остальные материалы ОПП и ДПП FR4/СТФ/HTG(новый)
+		   OTbuf = "<b>Cерийный</b><br>от 15 дней<br>Стандарт";
+           document.getElementById("std_txt_label").innerHTML = OTbuf;
+           OTbuf = "<b>Ускоренный</b><br>от 8 дней<br>+"+procent_expr+"%<br>";
+           document.getElementById("expr_txt_label").innerHTML = OTbuf;
+           OTbuf = "<b>СуперЭкспресс</b><br>от 4 дней<br>+"+procent_super+"%";
+           document.getElementById("super_txt_label").innerHTML = OTbuf;		 
+		 }
+		
+		// повторный 
+		OTbuf = "<b>Cерийный</b><br>Стандарт";
+        document.getElementById("std_txt_label2").innerHTML = OTbuf;
+        OTbuf = "<b>Ускоренный</b><br>+30%";
+        document.getElementById("expr_txt_label2").innerHTML = OTbuf;
+        OTbuf = "<b>СуперЭкспресс</b><br>+100%";
+        document.getElementById("super_txt_label2").innerHTML = OTbuf;
+		
+      }
+      else { // многослойки
+        OTbuf = "<b>Cерийный</b><br>от 20 дней<br>Стандарт";
+        document.getElementById("std_txt_label").innerHTML = OTbuf;
+        OTbuf = "<b>Ускоренный</b><br>от 13 дней<br>+"+procent_expr+"%<br>";
+        document.getElementById("expr_txt_label").innerHTML = OTbuf;
+        OTbuf = "<b>СуперЭкспресс</b><br>от 7 дней<br>+"+procent_super+"%";
+        document.getElementById("super_txt_label").innerHTML = OTbuf;
+		
+		OTbuf = "<b>Cерийный</b><br>Стандарт";
+        document.getElementById("std_txt_label2").innerHTML = OTbuf;
+        OTbuf = "<b>Ускоренный</b><br>+30%";
+        document.getElementById("expr_txt_label2").innerHTML = OTbuf;
+        OTbuf = "<b>СуперЭкспресс</b><br>+100%";
+        document.getElementById("super_txt_label2").innerHTML = OTbuf;
+      }
+
+    }
+
+    function show_hide() {
+      window.location.hash = "indetail"; //если попробный расчет показан то перейдет, инече нет
+      //$('.collapse').collapse('show') // отобразить скрытый div
+      var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+      var collapseList = collapseElementList.map(function (collapseEl) {
+        return new bootstrap.Collapse(collapseEl)
+      })
+    }
+
+    function close_indetail() {
+      //$('.collapse').collapse('hide')
+      var myCollapse = document.getElementById('indetail')
+      var bsCollapse = new bootstrap.Collapse(myCollapse, {
+        hide: true
+      })
+
+    }
+	
+	function copy_calculation_report_to_clipboard () {
+		
+	var buttreport = document.getElementById("buttoncopytoclipboard")
+      buttreport.classList.remove("bi-clipboard-plus");
+      buttreport.classList.add("bi-clipboard-check");
+      
+	  //OTbuf="Готово!";
+	  //buttreport.setAttribute('data-bs-original-title', OTbuf);
+	  //OTbuf="Скопировать результаты расчета в буфер обмена">
+	  //var carousel = bootstrap.Tooltip.getInstance(buttreport) // Retrieve a Carousel instance
+//carousel.tooltip('hide');
+//carousel.to('1') 
+
+	  buttreport.addEventListener( 'mouseover', function () {
+					//tooltip = tooltipUpdate( button, tooltip, 'Скопировать' );
+					this.classList.remove( 'bi-clipboard-check' );
+					this.classList.add( 'bi-clipboard-plus' );
+				} );
+	
+	    //let OTbuf = "1111текст отчета"+"\n"+"2222"+"\n"+"3333";
+				//let text    = OTbuf;
+		OTbuf="Предварительный расчет стоимости изготовления печатных плат";
+
+		
+		OTbuf += "\r\n"+"———————————";
+				//конструктив
+		OTbuf+="\r\n"+"Конструктив: ("+NUMB_sloev+"/";
+		switch (tolsh_plati) {
+		case 0.10: OTbuf+="01"; break;
+		case 0.25: OTbuf+="025"; break;
+        case 0.36: OTbuf+="036"; break;
+		case 0.51: OTbuf+="05"; break;
+        case 0.71: OTbuf+="071"; break;
+        case 1.0: OTbuf+="10"; break;
+		case 1.5: OTbuf+="15"; break;
+        case 2.0: OTbuf+="20"; break;
+		case 2.5: OTbuf+="25"; break;
+        case 3.0: OTbuf+="30"; break;
+      }
+	    OTbuf+="/"+tolsh_folgi+"/";
+		switch (parseInt(document.all.material_select.value)) {
+        case 1: OTbuf+="FR)."; break;
+        case 2: OTbuf+="СТФМи)."; break;
+        case 3: OTbuf+="Алюм)."; break;
+		case 4: OTbuf+="HTG)."; break;
+		case 5: OTbuf+="ITEQ)."; break;
+      }
+		OTbuf+="\r\n"+"Размер: "+dlinna+" мм x "+shirina+" мм.";
+		
+		OTbuf+="\r\n"+"Площадь одной платы: "+(Math.round(S_odna_plata * 10000) / 10000)+" дм².";
+
+        OTbuf+="\r\n"+"Количество плат: "+NUMB_plat+" шт.";
+        OTbuf+="\r\n"+"Общая площадь: "+(Math.round(S_obsh * 10000) / 10000)+" дм².";
+        OTbuf+="\r\n"+"Количество слоев: "+NUMB_sloev+" шт.";
+        OTbuf+="\r\n"+"Толщина платы: "+tolsh_plati+" мм.";
+		OTbuf+="\r\n"+"Толщина фольги: "+tolsh_folgi+" мкм.";
+		
+	 OTbuf+="\r\n"+"Материал: ";
+		switch (parseInt(document.all.material_select.value)) {
+        case 1: OTbuf+="FR4."; break;
+        case 2: OTbuf+="СТФ/Ми."; break;
+        case 3: OTbuf+="Алюминий."; break;
+		case 4: OTbuf+="FR4 High Tg."; break;
+		case 5: OTbuf+="FR4 ITEQ"; break;
+      }
+		
+		
+		
+		OTbuf+="\r\n"+"Паяльная маска: ";
+		switch (NUMB_mask) {
+        case 0: OTbuf+="отсутствует."; break;
+        case 1: OTbuf+="с одной стороны "; break;
+        case 2: OTbuf+="с двух сторон "; break;
+      }
+     
+	 if(NUMB_mask>0) 
+	 {
+       switch (parseInt(document.all.mask_color_select.value)) {
+          case 0: OTbuf+="(зеленая, "; break; //зеленая
+          case 1: OTbuf+="(черная, "; break; //черная
+          case 2: OTbuf+="(красная, "; break; //красная
+          case 3: OTbuf+="(синяя, "; break; //синяя
+          case 4: OTbuf+="(белая, "; break; //белая
+        }
+	 if (parseInt(document.all.mask_type_select.value) == 1) OTbuf+="пленочная)."; else OTbuf+="жидкая).";
+	 } 
+	  OTbuf+="\r\n"+"Маркировка: ";
+	  switch (NUMB_mark) {
+        case 0: OTbuf+="отсутствует."; break;
+        case 1: OTbuf+="с одной стороны."; break;
+        case 2: OTbuf+="с двух сторон."; break;
+      }
+
+        OTbuf+="\r\n"+"Покрытие: ";
+		switch (parseInt(document.all.pokritie_select.value)) {
+        case 0: OTbuf+="ПОС-63."; break;
+        case 1: OTbuf+="иммерсионное олово."; break;
+        case 2: OTbuf+="иммерсионное золото"; break;
+		case 3: OTbuf+="отсутствует (голая медь)."; break;
+      }
+	  
+	  if(parseInt(document.all.pokritie_select.value)==2) OTbuf+=" (площадь золота: "+parseInt(document.all.gold_s_input.value)+ " мм²).";
+  
+        OTbuf+="\r\n"+"Разъемы: ";
+	 switch (parseInt(document.all.razem_yn_select.value)) {
+        case 0: OTbuf+="нет."; break;
+        case 1: {OTbuf+="золото ("+parseInt(document.all.razem_n_select.value)+"шт, площадь золота: "+parseInt(document.all.razem_s_input.value)+ " мм²)."; break; }
+        case 2: {OTbuf+="никель ("+parseInt(document.all.razem_n_select.value)+"шт).";break;}
+      }
+  
+        OTbuf+="\r\n"+"Обработка контура: ";
+		switch (parseInt(document.all.kontur_select.value)) {
+        case 0: OTbuf+="отсутствует"; break;
+        case 1: OTbuf+="фрезеровка"; break;
+        case 2: OTbuf+="скрайбирование"; break;
+      }
+	  OTbuf+=" (обрезка L="+(Math.round(obrezL * 10000) / 10000)+" дм).";
+	  
+	    	
+        OTbuf+="\r\n"+"Вырезы/окна: ";
+		if(parseInt(document.all.virez_yn_select.value)==1) OTbuf+="есть (F="+virezF+" дм)."; else OTbuf+="нет.";
+		        
+		OTbuf+="\r\n"+"Электроконтроль: ";
+        if(parseInt(document.all.econtrol_select.value)==1) OTbuf+="выполняется."; else OTbuf+="отсутствует.";
+		
+		OTbuf+="\r\n"+"Сложность: ";
+		
+ 		 //---------------------------
+		 //для разной толщины фольги менять тескт условия перехода в 6й класс
+	  switch (parseInt(document.all.tolsh_folgi_select.value)) {
+              case 18: { switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.125 мм и больше / зазор 0.125 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="проводник менее 0.125 мм / зазор менее 0.125 мм / отверстие менее Ø 0.3 мм."; break;
+						} break;}
+			  case 35: { switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.150 мм и больше / зазор 0.150 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="проводник менее 0.150 мм / зазор менее 0.150 мм / отверстие менее Ø 0.3 мм."; break;
+						} break;}
+			  case 50: { switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.270 мм и больше (ободок 0.150 мм и больше) / зазор 0.270 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="нет / нет / нет"; break;
+						} break;}
+			  case 70: { switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.300 мм и больше (ободок 0.150 мм и больше) / зазор 0.300 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="нет / нет / нет"; break;
+						} break;}
+			  case 105:{ switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.350 мм и больше (ободок 0.150 мм и больше) / зазор 0.350 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="нет / нет / нет"; break;
+						} break;}
+              default: { switch (parseInt(document.all.klass_select.value)) {
+							case 4: OTbuf+="проводник 0.125 мм и больше / зазор 0.125 мм и больше / отверстие Ø 0.3 мм и больше."; break;
+							case 6: OTbuf+="проводник менее 0.125 мм / зазор менее 0.125 мм / отверстие менее Ø 0.3 мм."; break;
+						} break;}
+            }
+		//----------------------
+	  
+
+	  OTbuf += "\r\n"+"Дата расчета: "+date_time();
+
+ 
+	  OTbuf += "\r\n"+"———————————";
+
+        if(NUMB_sloev>2) // многослойные
+        {
+		        OTbuf+="\r\n"+"Новый заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 20 дней (Стандарт): "+document.all.new_std.value+" руб. За одну плату: "+document.all.odna_new_std.value+" руб.";
+				OTbuf+="\r\n"+"от 13 дней (Ускоренный): "+document.all.new_expr.value+" руб. За одну плату: "+document.all.odna_new_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 7 дней (СуперЭкспресс): "+document.all.new_super.value+" руб. За одну плату: "+document.all.odna_new_super.value+" руб.";
+				
+				OTbuf+="\r\n\r\n"+"Повторный заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 20 дней (Стандарт): "+document.all.old_std.value+" руб. За одну плату: "+document.all.odna_old_std.value+" руб.";
+				OTbuf+="\r\n"+"от 13 дней (Ускоренный): "+document.all.old_expr.value+" руб. За одну плату: "+document.all.odna_old_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 7 дней (СуперЭкспресс): "+document.all.old_super.value+" руб. За одну плату: "+document.all.odna_old_super.value+" руб.";
+        }
+        else  // однослойные и двуслойные
+        {
+				
+				if (parseInt(document.all.material_select.value) == 3) // проверка на алюминий 
+				{ //алюминий
+				OTbuf+="\r\n"+"Новый заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 17 дней (Стандарт): "+document.all.new_std.value+" руб. За одну плату: "+document.all.odna_new_std.value+" руб.";
+				OTbuf+="\r\n"+"от 10 дней (Ускоренный): "+document.all.new_expr.value+" руб. За одну плату: "+document.all.odna_new_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 5 дней (СуперЭкспресс): "+document.all.new_super.value+" руб. За одну плату: "+document.all.odna_new_super.value+" руб.";
+				
+				OTbuf+="\r\n\r\n"+"Повторный заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 17 дней (Стандарт): "+document.all.old_std.value+" руб. За одну плату: "+document.all.odna_old_std.value+" руб.";
+				OTbuf+="\r\n"+"от 10 дней (Ускоренный): "+document.all.old_expr.value+" руб. За одну плату: "+document.all.odna_old_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 5 дней (СуперЭкспресс): "+document.all.old_super.value+" руб. За одну плату: "+document.all.odna_old_super.value+" руб.";
+				}
+				else
+				{ // все остальные материалы ОПП и ДПП FR4/СТФ/HTG
+				OTbuf+="\r\n"+"Новый заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 15 дней (Стандарт): "+document.all.new_std.value+" руб. За одну плату: "+document.all.odna_new_std.value+" руб.";
+				OTbuf+="\r\n"+"от 8 дней (Ускоренный): "+document.all.new_expr.value+" руб. За одну плату: "+document.all.odna_new_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 4 дней (СуперЭкспресс): "+document.all.new_super.value+" руб. За одну плату: "+document.all.odna_new_super.value+" руб.";
+				
+				OTbuf+="\r\n\r\n"+"Повторный заказ, цена с НДС(";
+				if(k_nds=1.2) OTbuf+="20%):";
+				OTbuf+="\r\n"+"от 15 дней (Стандарт): "+document.all.old_std.value+" руб. За одну плату: "+document.all.odna_old_std.value+" руб.";
+				OTbuf+="\r\n"+"от 8 дней (Ускоренный): "+document.all.old_expr.value+" руб. За одну плату: "+document.all.odna_old_expr.value+" руб.";
+				OTbuf+="\r\n"+"от 4 дней (СуперЭкспресс): "+document.all.old_super.value+" руб. За одну плату: "+document.all.odna_old_super.value+" руб.";
+				}
+				
+        }	
+		
+		window.navigator.clipboard.writeText( OTbuf );
+	
+	}
+	/************************/
+	/*
+	function send_to_server()
+	{
+	   document.getElementById('start').submit();
+	}
+	*/
+	/**********************/
+	
+	    /* функция добавления ведущих нулей */
+    /* (если число меньше десяти, перед числом добавляем ноль) */
+    function zero_first_format(value)
+    {
+        if (value < 10)
+        {
+            value='0'+value;
+        }
+        return value;
+    }
+	
+	    function date_time()
+    {
+        var current_datetime = new Date();
+        var day = zero_first_format(current_datetime.getDate());
+        var month = zero_first_format(current_datetime.getMonth()+1);
+        var year = current_datetime.getFullYear();
+        //var hours = zero_first_format(current_datetime.getHours());
+        //var minutes = zero_first_format(current_datetime.getMinutes());
+        //var seconds = zero_first_format(current_datetime.getSeconds());
+		//return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
+        //return year+"."+month+"."+day;
+		return day+"."+month+"."+year;
+    }
+	
+  </script>
+
+  <script>
+    var myCollapsible = document.getElementById('indetail')
+    // Это событие наступает, когда элемент «коллапса» сделан видимым юзеру (будет ждать выполнения CSS-переходов).
+    myCollapsible.addEventListener('shown.bs.collapse', function () {
+      window.location.hash = "indetail";
+    })
+
+    var myCollapsible = document.getElementById('indetail')
+    // Это событие наступает немедленно по вызову метода hide.
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      window.location.hash = "calculation";
+    })
+  </script>
+  
+  <script>
+    function exportToExcel() {
+      // Создание нового Workbook
+      var workbook = new ExcelJS.Workbook();
+      var ws = workbook.addWorksheet('Лист1');
+
+      // Добавление данных в ячейки
+      ws.getCell('A1').value = 'Настоящая Заявка является неотъемлемой частью счет-договора';															
+      ws.getCell('P1').value = 'v.012k';
+      ws.getCell('A2').value = 'Заявка, поступившая по электронной почте, и факсимильная копия настоящей заявки имеют силу оригинала.';
+      ws.getCell('A3').value = 'Отправляя заполненный бланк в ООО " ЭЛЕКТРОконнект" я соглашаюсь с условиями Политики обработки персональных данных, даю Согласие на обработку персональных данных';
+      ws.getCell('Q3').value = '☑';	  
+      ws.getCell('A4').value = 'Заявка на производство печатных плат';										
+      ws.getCell('K4').value = 'Дата заявки:';						
+      ws.getCell('A5').value = 'Заказчик (название фирмы или ФИО)';																
+      ws.getCell('A6').value = 'ИНН/КПП:';										
+      ws.getCell('K6').value = 'E-mail:';						
+      ws.getCell('A7').value = 'Адрес:';															
+      ws.getCell('A8').value = 'ФИО, телефон, email';		
+      ws.getCell('C8').value = 'По тех. вопросам';														
+      ws.getCell('C9').value = 'По орг. вопросам';														
+      ws.getCell('C10').value = 'По доставке';														
+      ws.getCell('A11').value = 'Задание на производство';																
+      ws.getCell('A12').value = 'Тип заказа (новый, повторный)';				
+      ws.getCell('A13').value = 'Номера повторных заказов';				
+      ws.getCell('A14').value = 'Имя файла платы';				
+      ws.getCell('A15').value = 'Количество плат/блоков';				
+      ws.getCell('A16').value = 'Вариант и срочность';				
+      ws.getCell('A17').value = 'Формат поставки**';				
+      ws.getCell('A18').value = 'Точные размеры платы (мм.)**';				
+      ws.getCell('A19').value = 'Количество слоев (1, 2, 4, 6, 8)**';				
+      ws.getCell('A20').value = 'Материал основания **';				
+      ws.getCell('A21').value = 'Толщина платы (мм.) **';				
+      ws.getCell('A22').value = 'Толщина фольги (мкм.)**';				
+      ws.getCell('A23').value = 'Паяльная маска **';				
+      ws.getCell('A24').value = 'Цвет паяльной маски **';				
+      ws.getCell('A25').value = 'Маркировка **';				
+      ws.getCell('A26').value = 'Финишное покрытие **';				
+      ws.getCell('A27').value = 'Разъемы ножевые**';				
+      ws.getCell('A28').value = 'Вариант МПП';				
+      ws.getCell('A29').value = 'Наличие электроконтроля **';				
+      ws.getCell('A30').value = 'Метод обработки контура **';				
+      ws.getCell('A31').value = 'Файл сверловки содержит диаметр сверла или отверстия';	
+      ws.getCell('A32').value = 'Требования к содержанию конструкторской документации **';																
+      ws.getCell('A33').value = 'Входной формат (система проектирования)';																
+      ws.getCell('A34').value = 'Имя слоя с контуром платы';																
+      ws.getCell('A35').value = 'Имена и порядок следования внутренних слоев многослойных печатных плат (МПП)';																
+      ws.getCell('A41').value = 'Ед. измерения (для PCAD4.5 - 8.5)';																
+      ws.getCell('A42').value = 'Наличие вырезов или окон';																
+      ws.getCell('A43').value = 'Переходные отверстия (кроме Gerber)';																
+      ws.getCell('A44').value = 'Монтаж';																
+      ws.getCell('A45').value = 'Место монтажа';																
+      ws.getCell('A46').value = 'Доставка';																
+      ws.getCell('A47').value = 'Доставка осуществляется ООО «Электроконнект» (да/нет, указать пункт назначения)';																
+      ws.getCell('A48').value = 'Иные требования';																
+      ws.getCell('A49').value = '** - Поля, необязательные для повторных заказов';	
+      ws.getCell('B51').value = 'ФИО ответственного лица от заказчика, печать';
+      
+	  ws.getCell('N4').value = date_time();
+	  ws.getCell('F12').value = 'Новый';	  
+      ws.getCell('F15').value = NUMB_plat;
+	  ws.getCell('F18').value = dlinna+" x "+shirina;
+	  ws.getCell('F19').value = NUMB_sloev;
+	  
+  	  switch (parseInt(document.all.material_select.value)) {
+        case 1: OTbuf="FR4"; break;
+        case 2: OTbuf="СТФ, Ми"; break;
+        case 3: OTbuf="Алюминий"; break;
+		case 4: OTbuf="FR4 High TG"; break;
+		case 5: OTbuf="FR4 ITEQ"; break;
+      }
+	  ws.getCell('F20').value = OTbuf;
+	  ws.getCell('F21').value = tolsh_plati;
+	  ws.getCell('F22').value = tolsh_folgi;
+	  ws.getCell('F23').value = document.getElementById('maska_select').options[document.getElementById('maska_select').selectedIndex].textContent;
+	  if(NUMB_mask==0) ws.getCell('F24').value ="-"; else ws.getCell('F24').value = document.getElementById('mask_color_select').options[document.getElementById('mask_color_select').selectedIndex].textContent + " " + document.getElementById('mask_type_select').options[document.getElementById('mask_type_select').selectedIndex].textContent;
+  	  ws.getCell('F25').value = document.getElementById('markirovka_select').options[document.getElementById('markirovka_select').selectedIndex].textContent;
+	  
+	  switch (parseInt(document.all.pokritie_select.value)) {
+      case 0: OTbuf="ПОС-63"; break;
+      case 1: OTbuf="Иммерс. олово"; break;
+      case 2: OTbuf="Иммерс. золото"; break;
+	  case 3: OTbuf="отсутств.(гол.медь)"; break;      }
+      ws.getCell('F26').value = OTbuf;
+	  
+	  ws.getCell('F27').value = document.getElementById('razem_yn_select').options[document.getElementById('razem_yn_select').selectedIndex].textContent;
+	  ws.getCell('F28').value = 'Любой';
+	  if(parseInt(document.all.econtrol_select.value)==1) OTbuf="выполняется"; else OTbuf="отсутствует";
+	  ws.getCell('F29').value = OTbuf;
+	  ws.getCell('F30').value = document.getElementById('kontur_select').options[document.getElementById('kontur_select').selectedIndex].textContent;
+	  if(parseInt(document.all.virez_yn_select.value)==1) OTbuf="есть (F="+virezF+" дм)"; else OTbuf="нет";
+	  ws.getCell('F42').value = OTbuf;
+	  OTbuf='Проводник(ободок)/зазор/отверстие, мм: '+document.getElementById('klass_select').options[document.getElementById('klass_select').selectedIndex].textContent;;
+      //если имерсионное золото тогда вывести в отчет его площадь
+	  if(parseInt(document.all.pokritie_select.value)==2) //иммерсионное золото
+	  OTbuf=OTbuf+'. S_хим_золота='+parseInt(document.all.gold_s_input.value)+ ' мм²';
+	  
+	  
+	  ws.getCell('C48').value = OTbuf+'. Предварительный расчет цены для '+ NUMB_plat+' шт.: Новый Cерийный '+ document.all.new_std.value+', Новый Ускоренный '+document.all.new_expr.value+', Новый СуперЭкспресс '+document.all.new_super.value+', Повторный Cерийный '+document.all.old_std.value+', Повторный Ускоренный '+document.all.old_expr.value+', Повторный СуперЭкспресс '+document.all.old_super.value;
+	  
+	  // выше исправил 
+  
+		// Создание выпадающих списков в ячейках 
+		  ws.dataValidations.add('F12:O12', {
+		  type: 'list',  formulae: ['"Новый,Повторный"']});
+		  ws.dataValidations.add('F16:O16', {
+		  type: 'list',  formulae: ['"Серийный,Ускоренный,СуперЭкспресс"']});
+		  ws.dataValidations.add('F17:O17', {
+		  type: 'list',  formulae: ['"Единичными платами,Блок из однотип. плат, Блок из разнотип. плат(комплект),На усмотрение производства,По приложенному эскизу"']});
+	      ws.dataValidations.add('F19:O19', {
+		  type: 'list',  formulae: ['"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"']});
+		  ws.dataValidations.add('F20:O20', {
+		  type: 'list',  formulae: ['"FR4 типовой,FR4 Tg170,FR4 СТФ,RO3003,RO4350,RO4003C,ФАФ-4Д,алюминий HA80,материал заказчика"']});
+		  ws.dataValidations.add('F21:O21', {
+		  type: 'list',  formulae: ['"0.10,0.20,0.25,0.36,0.51,0.71,1.0 типовая,1.5 типовая,2.0 типовая,2.5,3.0"']});
+
+		  ws.dataValidations.add('F22:O22', {
+		  type: 'list',  formulae: ['"18 типовая,35 типовая,50,70,105"']});
+		  ws.dataValidations.add('F23:O23', {
+		  type: 'list',  formulae: ['"Отсутствует,С двух сторон,Только верх,Только низ"']});
+		  ws.dataValidations.add('F24:O24', {
+		  type: 'list',  formulae: ['"зеленая типовой,синяя,красная,белая,черная"']});
+		  ws.dataValidations.add('F25:O25', {
+		  type: 'list',  formulae: ['"Отсутствует,Только верх,Только низ,С двух сторон"']});
+		  ws.dataValidations.add('F26:O26', {
+		  type: 'list',  formulae: ['"ПОС-63,Иммерс.олово,Иммерс.золото,Голая медь"']});
+		  ws.dataValidations.add('F27:O27', {
+		  type: 'list',  formulae: ['"Отсутствует,Никель,Золото"']});
+		  ws.dataValidations.add('F28:O28', {
+		  type: 'list',  formulae: ['"Любой, Свой (эскиз)"']});
+		  ws.dataValidations.add('F29:O29', {
+		  type: 'list',  formulae: ['"Да,Нет"']});
+		  ws.dataValidations.add('F30:O30', {
+		  type: 'list',  formulae: ['"Фрезеровка,Скрайбирование,Фрезер+Скрайб"']});
+		  ws.dataValidations.add('F31:O31', {
+		  type: 'list',  formulae: ['"конечного отверстия, сверла"']});
+		  ws.dataValidations.add('F41:O41', {
+		  type: 'list',  formulae: ['"Миллиметры,100DBU=2.54мм,100DBU=2.5мм"']});
+		  ws.dataValidations.add('F42:O42', {
+		  type: 'list',  formulae: ['"Есть,Нет"']});
+		  ws.dataValidations.add('F43:O43', {
+		  type: 'list',  formulae: ['"Открыты,Под маской"']});
+		  ws.dataValidations.add('F45:O45', {
+		  type: 'list',  formulae: ['"ООО Сант,Самостоятельно"']});
+		  
+	  
+      // рисуем границы ячеек
+	    for (let row = 1; row <= 48; row++) {
+        for (let col = 1; col <= 17; col++) {
+            if(row!=3) {  // в третьей строке не задаем границы ячеек
+				const cell = ws.getCell(row, col);
+				cell.border = {
+				top: { style: 'thin' },
+				bottom: { style: 'thin' },
+				left: { style: 'thin' },
+				right: { style: 'thin' }
+				};
+			}
+        }
+        }
+	  
+	  
+ //       for (let row = 4; row <= 48; row++) {
+ //       for (let col = 1; col <= 17; col++) {
+ //           const cell = ws.getCell(row, col);
+ //           cell.border = {
+ //           top: { style: 'thin' },
+ //           bottom: { style: 'thin' },
+ //           left: { style: 'thin' },
+ //           right: { style: 'thin' }
+ //           };
+ //       }
+ //       }
+       
+	   // Выравнивание по центру для диапазона ячеек 
+        for (let row = 12; row <= 45; row++) {
+        for (let col = 6; col <= 17; col++) {
+            const cell = ws.getCell(row, col);
+            cell.alignment = { vertical: 'middle', horizontal: 'center' };
+        }
+        }
+     
+      // Объединяем ячейки
+        const mergeRanges = [
+        'A1:O1',
+        'P1:Q1',
+        'A2:Q2',
+		'A3:P3',
+        'A4:J4',
+        'K4:M4',
+        'N4:Q4',
+        'A5:G5',
+        'H5:Q5',
+        'A6:B6',
+        'C6:J6',
+        'K6:L6',
+        'M6:Q6',
+        'A7:B7',
+        'C7:Q7',
+        'A8:B10',
+        'C8:D8',
+        'C9:D9',
+        'C10:D10',
+        'E8:Q8',
+        'E9:Q9',
+        'E10:Q10',
+        'A11:Q11',
+        'A32:Q32',
+		'A34:E34',
+        'A44:Q44',
+        'A46:Q46',
+        'A49:Q49',
+        'A45:E45',
+        'F45:H45',
+        'I45:K45',
+        'L45:N45',
+        'O45:Q45',
+        'A48:B48',
+        'C48:Q48',
+        'A47:H47',
+        'I47:Q47',
+        'A35:E40',
+        'A41:E41',
+        'A42:E42',
+        'A43:E43',
+        'B50:H50',
+        'K50:P50'
+        ];
+
+        mergeRanges.forEach(range => {
+        ws.mergeCells(range);
+        });
+
+
+
+      // Объединяем ячейки с A12 по A31
+      for (let i = 12; i <= 31; i++) {
+        ws.mergeCells(`A${i}:E${i}`); 
+        ws.mergeCells(`F${i}:H${i}`);
+        ws.mergeCells(`I${i}:K${i}`);
+        ws.mergeCells(`L${i}:N${i}`);
+        ws.mergeCells(`O${i}:Q${i}`);
+
+      }
+
+      const values = [11, 32, 44, 46];
+
+      for (const value of values) {
+        ws.getCell(`A${value}`).border = {top: { style: 'thin' },bottom: { style: 'double' },left: { style: 'thin' },right: { style: 'thin' }};
+        ws.getCell(`A${value}`).alignment = { vertical: 'middle', horizontal: 'center' };
+        ws.getCell(`A${value}`).font = { bold: true };
+      }
+
+      ws.mergeCells('A33:G33');
+      ws.mergeCells('H33:Q33');
+      for (let i = 34; i <= 43; i++) {
+        ws.mergeCells(`F${i}:H${i}`);
+        ws.mergeCells(`I${i}:K${i}`);
+        ws.mergeCells(`L${i}:N${i}`);
+        ws.mergeCells(`O${i}:Q${i}`);
+
+      }
+ 
+      // Задаем высоту ряда
+      ws.getRow(3).height = 31,5;	  
+      ws.getRow(17).height = 28,5;	  
+	  ws.getRow(31).height = 31,5;
+      ws.getRow(47).height = 31,5;
+      ws.getRow(48).height = 48,5;
+      
+
+      // Установка ширины столбцов
+      for (var i = 2; i <= 18; i++) {
+          //ws.getColumn(i).width = 5.1;
+		  ws.getColumn(i).width = 5.8;
+      }
+      
+	  // Задаем свойство переноса текста
+      //ws.getCell(30, 1).alignment = { wrapText: true };
+	  
+      // Выравнивание внутри ячеек и свойство переноса по словам
+        const alignmentData = [
+		{ c: 'A3', v: 'middle', h: 'center', w: true },
+		{ c: 'Q3', v: 'middle', h: 'center', w: true },
+        { c: 'P1', v: 'middle', h: 'right' },
+        { c: 'A5', v: 'middle', h: 'center' },
+        { c: 'A6', v: 'middle', h: 'center' },
+        { c: 'A7', v: 'middle', h: 'center' },
+        { c: 'K6', v: 'middle', h: 'center' },
+        { c: 'K4', v: 'middle', h: 'center' },
+        { c: 'A8', v: 'middle', h: 'center', w: true },
+		{ c: 'A17', v: 'middle', h: 'left', w: true },
+		{ c: 'F17', v: 'middle', h: 'center', w: true },
+		{ c: 'I17', v: 'middle', h: 'center', w: true },
+		{ c: 'L17', v: 'middle', h: 'center', w: true },
+		{ c: 'O17', v: 'middle', h: 'center', w: true },
+		{ c: 'F31', v: 'middle', h: 'center', w: true },
+		{ c: 'I31', v: 'middle', h: 'center', w: true },
+		{ c: 'L31', v: 'middle', h: 'center', w: true },
+		{ c: 'O31', v: 'middle', h: 'center', w: true },
+		{ c: 'A31', v: 'middle', h: 'left', w: true },
+        { c: 'A35', v: 'middle', h: 'center', w: true },
+		{ c: 'A47', v: 'middle', h: 'center', w: true },
+        { c: 'A48', v: 'middle', h: 'center', w: true },
+		{ c: 'C48', v: 'middle', h: 'center', w: true },
+        { c: 'A4', v: 'middle', h: 'center' },
+		{ c: 'N4',  v: 'middle', h: 'center' },
+		{ c: 'I47', v: 'middle', h: 'center', w: true },
+		{ c: 'C6',  v: 'middle', h: 'center' },
+        { c: 'A49', v: 'middle', h: 'left', w: true }
+        ];
+
+        for (const data of alignmentData) {
+        const cell = ws.getCell(data.c);
+        cell.alignment = {
+            vertical: data.v,
+            horizontal: data.h,
+            wrapText: data.w || false
+        };
+        }
+        
+		// Настройка шрифтов
+		ws.getCell('A4').font = { bold: true };
+        ws.getCell('A49').font = { bold: true };
+		
+		const fontData = [
+        { c: 'A41', sz: 10},
+		{ c: 'F14', sz: 10},
+		{ c: 'I14', sz: 10},
+		{ c: 'L14', sz: 10},
+		{ c: 'O14', sz: 10},
+		{ c: 'F17', sz: 10},
+		{ c: 'I17', sz: 10},
+		{ c: 'L17', sz: 10},
+		{ c: 'O17', sz: 10},
+		{ c: 'C48', sz: 9},
+        ];
+		
+		for (const data of fontData) {
+        const cell = ws.getCell(data.c);
+        cell.font = {
+            size: data.sz,
+        };
+        }
+		
+		
+		// размер шрифта	
+	    ws.getCell('Q3').font = {size: 22 };
+		ws.getCell('A43').font = {size: 10 };
+		
+
+	    for (let row = 34; row <= 40; row++) {
+         for (let col = 6; col <= 17; col++) {
+            ws.getCell(row, col).font = {size: 9 };
+         }
+        }
+	
+
+	  // Границы нижних ячеек (подчеркивание)
+      ws.getCell('B50').border =  { bottom: { style: 'thin' } };
+      ws.getCell('K50').border =  { bottom: { style: 'thin' } };
+	  
+	  // пунктир для ячейки с галочкой
+	  ws.getCell('Q3').border = { left: { style: 'dotted'}, top: { style: 'thin' }, bottom: { style: 'thin'}, right: { style: 'thin'} };
+	  
+	  ws.getCell('A3').border = { left: { style: 'thin'}, top: { style: 'thin' }, bottom: { style: 'thin'}, right: { style: 'dotted'} };
+
+	  //Задание области печати в дюймах 
+	  //ws.pageSetup.printArea='A1:Q51';
+	  //ws.pageSetup.margins={left:0.5, right:0.5, top: 0.75, bottom: 0.75};
+	  ws.pageSetup.fitToPage=true;
+	  ws.pageSetup.fitToWidth=1;
+	  ws.pageSetup.fitToHeight=1;
+
+      // Генерация и скачивание файла
+      workbook.xlsx.writeBuffer().then(function(buffer) {
+        var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'blank_zakaza.xlsx';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(71484055, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/71484055" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->  
+  
+  
+</body>
+
+</html>
