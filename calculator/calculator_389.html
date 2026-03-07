@@ -1492,7 +1492,7 @@ const price_list = [ // до20, >20, >50, >100, >300, >500
 	  
       //--изменить цвет выпадающего списка маски
       //var selectMASKcolor = document.querySelector('.select.new');
-	  /*var selectMASKcolor = document.getElementById('mask_color_select');
+	  var selectMASKcolor = document.getElementById('mask_color_select');
       selectMASKcolor.addEventListener('change', function () {
         switch (parseInt(maskColorSelect.value)) {
           case 0: selectMASKcolor.style.backgroundColor = "#EEFFE9"; break; //зеленая
@@ -1501,7 +1501,7 @@ const price_list = [ // до20, >20, >50, >100, >300, >500
           case 3: selectMASKcolor.style.backgroundColor = "#E9EFFF"; break; //синяя
           case 4: selectMASKcolor.style.backgroundColor = "#FFFFFF"; break; //белая
         }
-      });*/
+      });
       // -- цвет select для кол-ва слоев (при фольге 50,70,105, ОПП переводится на ДПП---
       // при нажатии кнопки мыши поменять цвет select на белый в числе слоев
       var selectMASKcolor2 = document.querySelector('.select.numb_sloev_red_error');
@@ -1747,7 +1747,7 @@ const price_list = [ // до20, >20, >50, >100, >300, >500
 			//--------- prn S -----
 			s1_for_txt = Math.round(S_odna_plata * 10000) / 10000;
 			sALL_for_txt = Math.round(S_obsh * 10000) / 10000;
-			OTbuf = "<small>Площадь одной платы: " + s1_for_txt + " дм².<br>Общая площадь заказа: " + sALL_for_txt + " дм².</small>";
+			OTbuf = "<small>Площадь одной платы: " + s1_for_txt + " дм². Общая площадь заказа: " + sALL_for_txt + " дм².</small>";
 			document.getElementById("text_s1_s").innerHTML = OTbuf;
 			// Внимание!!! для упрощения дальнейшего алгоритма расчета производится подмена площади одной платы прощадью одной платы в блоке
 			S_odna_plata=S_odna_plata_in_block;
