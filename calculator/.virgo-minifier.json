@@ -1,0 +1,21 @@
+{
+    "autoMinify": true,
+    "minifyOnSave": true,
+    "removeComments": true,
+    "preserveLicense": true,
+    "minifyHTML": true,
+    "minifyJS": true,
+    "minifyCSS": true,
+    "htmlOptions": {
+        "minifyCSS": true,
+        "minifyJS": true
+    },
+    "jsOptions": {
+        "compress": true,
+        "mangle": true
+    },
+    "cssOptions": {
+        "level": 1,
+        "format": "keep-breaks"
+    }
+}
