@@ -1,0 +1,734 @@
+body {
+  font-family: "Montserrat", "system-ui", sans-serif;
+  color: #002e63;
+  font-weight: 400;
+  /*font-size: 24px*/
+}
+
+
+.label-pad {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 13px !important; /* 16 */
+}
+
+.label-pad2 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.tooltip-inner {
+  background-color: #112b37;
+  border: 1px solid #000000;
+  color: #ffffff;
+}
+
+.form-control-sm {
+  font-size: 16px !important; /* 16 */
+  line-height: 16px !important;
+  min-height: 26px;
+  height: 26px;
+  padding: 2px !important;
+  /*padding-right: 0px !important;*/
+  color: #002e63 !important; 
+  /*padding-right: 28px;*/
+  border: 1px solid #002e63;
+  padding-top: 4px;        /* уменьшаем верхний padding на 1px (было 5px) */
+  padding-bottom: 4px;      /* уменьшаем нижний padding на 1px (было 5px) */
+  margin-top: 1px;          /* добавляем отступ сверху */
+  margin-bottom: 1px;       /* добавляем отступ снизу */
+}
+
+.form-control-sm:hover {
+  position: relative;
+  z-index: 20;
+  border-color: #6699ff;
+}
+
+.form-control-sm:focus {
+  position: relative;
+  z-index: 10;
+}
+
+.form-control-sm.form-control-sm-dlinshirin {
+  /*padding-left: 12px !important;*/
+  padding-right: 12px !important;
+  padding-left: 16px !important;
+  
+  
+  line-height: 20px !important;
+  /*padding-right: 28px;*/
+  border: 1px solid #002e63;
+  padding-top: 4px;        /* уменьшаем верхний padding на 1px (было 5px) */
+  padding-bottom: 4px;      /* уменьшаем нижний padding на 1px (было 5px) */
+  margin-top: 1px;          /* добавляем отступ сверху */
+  margin-bottom: 1px;       /* добавляем отступ снизу */
+}
+
+/*.form-select-sm {
+  font-size: 16px !important;
+  line-height: 16px !important;
+  padding-left: 12px;
+  color: #002e63 !important;  
+}*/
+
+.form-select-sm {
+  line-height: 20px !important;
+  /*padding-right: 28px;*/
+  border: 1px solid #002e63;
+  padding-top: 4px;        /* уменьшаем верхний padding на 1px (было 5px) */
+  padding-bottom: 4px;      /* уменьшаем нижний padding на 1px (было 5px) */
+  margin-top: 1px;          /* добавляем отступ сверху */
+  margin-bottom: 1px;       /* добавляем отступ снизу */
+  font-size: 16px !important;
+  line-height: 16px !important;
+  padding-left: 12px;
+  color: #002e63 !important; 
+}
+
+select.form-select-sm {
+ padding-left: 7px;
+}
+
+.form-select-sm:hover {
+  position: relative;
+  z-index: 20;
+  border-color: #6699ff;
+}
+
+.form-select-sm:focus {
+  position: relative;
+  z-index: 10;
+}
+
+.butt-pad {
+  padding-left: 5px;
+}
+
+.nds-pad {
+  padding-left: 0px;
+}
+
+.text_s1_s {
+color: #002e63;	
+}
+
+/* уменьшенная кнопка для самого маленького экрана, далее увеличится */
+/*.btn { 
+      border-radius: 0;
+      padding: 0.85rem 0.75rem;
+      font-size: 1rem;
+    }
+	
+	.btn-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 18px;
+      line-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+	
+	.btn-copytoclipboard {
+      border: 0;
+    }*/
+
+.calculator-body__data-button {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-body__data-button .btn {
+  font-size: 16px;
+  height: 45px;
+  padding: 15px 20px;
+  box-shadow: 4px 4px 10px 0 #00000040;
+}
+
+/* ===== 4. КНОПКИ (BUTTON) ===== */
+.btn {
+  font-weight: 700;
+  height: 50px;
+  line-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 15px;
+  border-radius: 10px;
+  background-color: #f56600;
+  gap: 10px;
+  outline: 0;
+  border: none;
+  font-family: Montserrat, sans-serif;
+  transition: 0.3s;
+}
+
+.btn-copytoclipboard {
+  /*border: 0;*/
+  color: #002e63;
+  background-color: #ffffff;
+}
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  color: #002e63;
+  border-radius: 10px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 18px;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.btn-close {
+  background-color: #ffffff;
+  height: 25%; /* Высота = высота родителя */
+  max-height: 25%; /* Страховка от переполнения */
+  box-sizing: border-box; /* Чтобы padding и border не увеличивали размер */
+}
+
+.btn:hover {
+  filter: brightness(140%);
+  color: #002e63;
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #002e63;
+}
+
+.calculator-body__buttons .btn {
+  width: 100%;
+  box-shadow: 4px 4px 10px 0 #00000040;
+  border: 1px solid #002e63;
+  font-size: 16px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/*---------------------------------*/
+
+.minfont2 {
+  font-size: 13px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+.fsiz {
+  font-size: 11pt;
+}
+
+.standcol {
+}
+
+/*
+.standcol:hover {
+  border-color: #ededed;
+  box-shadow: none;
+  cursor: default !important;
+}
+*/
+
+.exprcol {
+  /*background: #fefbf2 !important;*/
+  background: #feffc0 !important;
+}
+
+/*
+.exprcol:hover {
+  border-color: #ffa500;
+  box-shadow: none;
+  cursor: default !important;
+}
+*/
+
+.supercol {
+  /*background: #fef7f7 !important;*/
+  /*background: #fef7f7 !important;*/
+  background: #d7ffd4 !important;
+}
+
+/*
+.supercol:hover {
+  border-color: red;
+  box-shadow: none;
+  cursor: default !important;
+}
+*/
+
+.indata {
+  /*padding: 10px 20px 20px !important;*/ /* верх правоИлево низ */
+  border-radius: 4px;
+  margin-top: 0px;
+}
+
+.outresult {
+  padding: 10px 12px 20px;
+  border-radius: 4px;
+  margin-top: 0px;
+}
+
+.indetailform {
+  padding: 10px 2px 20px !important; /* верх правоИлево низ */
+  border-radius: 4px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+
+    /* Дополнительные стили для блока */
+    .canvas-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 10px 0 16px;
+      gap: 15px;
+    }
+    .checkbox-group {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-left: 10px;
+      margin-top: 8px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #002e63;
+      font-weight: 500;
+      background: #ffffffc0;
+      padding: 4px 12px 4px 8px;
+      border-radius: 40px;
+      border: 1px solid #d9e2ef;
+      font-size: 14px;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #f56600;
+      margin: 0;
+    }
+    .canvas-size-info {
+      background: #f1f5f9;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #002e63;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border: 1px solid #cbd5e1;
+      font-size: 14px;
+    }
+    .canvas-size-info:hover {
+      background: #e2e8f0;
+    }
+    .canvas-size-info span {
+      color: #f56600;
+      background: #fff0e0;
+      padding: 3px 12px;
+      border-radius: 30px;
+      margin-left: 8px;
+      font-family: monospace;
+      font-weight: 600;
+    }
+    .dimension-info {
+      /*background: #e9f0ef;*/
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-weight: 400;
+      color: #002e63;
+      font-size: 1.1rem;
+      /*box-shadow: 0 2px 6px #b8d9cf;*/
+      display: flex;
+      flex-wrap: wrap;
+      /*gap: 10px 25px;*/
+	  gap: 3px 25px;
+      align-items: baseline;
+      /*margin-bottom: 20px;
+      margin-top: 15px;*/
+	  /*margin-right: 10px;*/
+	  justify-content: flex-start; /* Выравнивание по левому краю */
+	  text-align: left; /* Текст внутри тоже по левому краю */
+    }
+    .dimension-item {
+      /*white-space: nowrap;*/ /* Текст всегда в одну строку */
+	  white-space: normal;  /* Текст будет переноситься по словам */
+      font-size: 14px;
+    }
+    .dimension-item strong {
+      color: #f56600;
+      margin-right: 4px;
+    }
+	.dimension-item strong2 {
+      /*color: #f56600;*/
+      margin-right: 4px;
+    }
+    .canvas-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    canvas {
+      display: block;
+      box-shadow: 6px 6px 9px 0px rgba(34, 60, 80, 0.33);
+      background-color: white;
+      cursor: pointer;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+    }
+
+    .detail-canvas-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+	  background-color: transparent;
+      /*background-color: #f8fafc;*/
+      /*border-radius: 16px;*/
+      /*padding: 10px;*/
+	  padding: 0; /* Убираем отступы */
+    }
+    #detailCanvas {
+      cursor: default;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .gap-controls {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+      flex-wrap: wrap;
+    }
+    .inline-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+      background: white;
+      /*padding: 5px 12px;*/
+	  padding: 0px 2px 0px 0px;
+      border-radius: 5px;
+      /*border: 1px solid #cbd5e1;*/
+      font-size: 14px;
+	  /*color: #00FF00;*/
+    }
+    .gap-inputs {
+      /*display: flex;*/
+      /*align-items: center;*/
+      /*gap: 2px;*/
+	  border-radius: 5px;
+    }
+    .gap-inputs input[type="number"] {
+     /* width: 80px;*/
+    }
+    .gap-inputs.disabled input {
+      background-color: #e9ecef;
+      color: #6c757d;
+      cursor: not-allowed;
+      border-color: #ced4da;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .btn-toggle {
+      background: #f56600;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 10px 28px;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(245,102,0,0.3);
+      transition: background 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .btn-toggle:hover {
+      background: #d44d00;
+      color: white;
+    }
+	
+	.blockParams {
+		padding-right: 11px;
+	}
+	
+    .block-params-row {
+      /*background: #f8fafc;*/
+      /*padding: 15px;*/
+      border-radius: 5px;
+      /*margin-bottom: 15px;*/
+      border: 1px solid #9aa1ab;
+	  /*border: 1px dashed #9aa1ab;*/
+	  /*border: 1px dashed #9aa1ab;*/
+	  background: #eceff6;
+	  padding-right: 1px;
+    }
+    .block-params-row h5 {
+      color: #002e63;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+	
+	/* цвет чекбокса */
+	#standardCheckboxContainer .form-check-input {
+        --bs-form-check-bg: white;  /* фон */
+        accent-color: #002e63;       /* цвет галочки */
+        border-color: #002e63;       /* цвет рамки */
+    }
+    
+    /* Для состояния checked */
+    #standardCheckboxContainer .form-check-input:checked {
+        background-color: #2d588a;
+        border-color: #002e63;
+    }
+   /* цвет чекбокса */
+   
+/* yellow-bg для визуальной подсветки автоматически исправленных значений (жёлтый фон) */
+.yellow-bg {
+    background-color: yellow !important;
+
+}
+
+
+/* Стили для кастомных кнопок количества */
+.quantity-controls {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 30px; /* Фиксированная высота для всего контрола */
+}
+
+.quantity-controls input {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none !important;
+  width: calc(100% - 80px);
+  flex: 1;
+  height: 30px !important; /* Принудительная высота */
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 4px 12px;
+}
+
+.quantity-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 80px;
+  height: 30px; /* Та же высота, что и у input */
+}
+
+.quantity-buttons button {
+  /*margin: 0;*/
+  margin-top: 1px;
+  padding: 0;
+  width: 40px;
+  height: 30px; /* Фиксированная высота */
+  border-left: none;
+  border-radius: 0;
+  background-color: #f0f0f0;
+  font-size: 18px; /* Увеличил размер шрифта для кнопок */
+  line-height: 30px; /* Центрирование по вертикали */
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #002e63;
+  cursor: pointer;
+  color: #002e63;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-buttons button:first-child {
+  border-right: none;
+}
+
+.quantity-buttons button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.quantity-buttons button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Убираем стандартные стрелки у поля количества */
+#n_plat_select::-webkit-inner-spin-button,
+#n_plat_select::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#n_plat_select {
+  -moz-appearance: textfield;
+}
+
+
+/* Экстрамалые девайсы («телефоны», менее 576px) */
+/* Нет @media, т.к. это по умолчанию в Bootstrap */
+
+@media (min-width: 370px) {
+  /*CUSTOM SIZE произвольно заданный размер*/
+  .indata {
+    padding: 30px 75px 20px !important;
+  }
+
+  .btn {
+    /* увеличить до нормального размера */
+    padding: 0.85rem 1.25rem;
+  }
+
+  .btn-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 18px;
+    line-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .btn-copytoclipboard {
+    border: 0;
+  }
+
+  .label-pad {
+    font-size: 16px !important;
+  }
+
+  .label-pad2 {
+    /* восстановить отступы*/
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .dimension-item {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 576px) {
+  /* на sm */
+
+  .indata {
+    padding: 10px 40px 20px !important; /* верх правоИлево низ */
+  }
+
+  .indetailform {
+    padding: 10px 20px 20px !important; /* верх правоИлево низ */
+    border-radius: 4px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .form-control-sm {
+    line-height: 20px !important;
+    min-height: 30px;
+    height: 30px;
+    /*padding-left: 12px !important;
+    padding-right: 12px !important;*/
+	border: 1px solid #002e63;
+	font-size: 16px !important;
+  }
+
+  .form-select-sm {
+    line-height: 20px !important;
+    /*padding-right: 28px;*/
+	border: 1px solid #002e63;
+  }
+
+  .nds-pad {
+    padding-left: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* на md */
+  .indata {
+    padding: 30px 70px 20px !important;
+  }
+
+  .outresult {
+    padding: 30px 30px 20px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  /* на lg */
+  .indata {
+    padding: 30px 20px 20px !important;
+  }
+
+  .outresult {
+    padding: 30px 12px 20px !important;
+  }
+
+  .form-control-sm {
+   /* padding-left: 4px;*/
+   font-size: 17px !important;
+  }
+
+ 
+  .dimension-item {
+    font-size: 14px;
+  }
+  
+  .label-pad {
+    font-size: 14px !important;
+  }
+  
+  h3, .h3 {
+    font-size: 25px !important; /* уменьшаем */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* на lx */
+  .indata {
+    padding: 30px 40px 20px !important;
+  }
+
+  .outresult {
+    padding: 30px 12px 20px !important;
+  }
+
+  .form-control-sm {
+   /* padding-left: 12px;*/
+  }
+
+  .form-select-sm {
+    padding-left: 12px;
+  }
+  
+  .dimension-item {
+    font-size: 15px;
+  }
+  
+  .label-pad {
+    font-size: 16px !important;
+  }
+  
+  h3, .h3 {
+       font-size: 1.75rem !important; /* возвращаем назад *//* Типичный размер h3 в Bootstrap 5 */
+  }
+}
